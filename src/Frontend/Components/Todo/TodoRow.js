@@ -26,7 +26,8 @@ class TodoRow extends Component {
       <div>
         {
           this.state.edit ?
-            <EditTodo todoData={this.props.todo} editTodo={this.editTodo} dispatch={this.props.dispatch}/> :
+            <EditTodo todoData={this.props.todo} editTodo={this.editTodo} />
+            :
             <span> {todo.name} - {todo.status}</span>
         }
         <button onClick={() => this.setState({edit: !this.state.edit})}>Edit</button>
@@ -36,4 +37,4 @@ class TodoRow extends Component {
   }
 }
 
-export default TodoRow;
+export default connect()(TodoRow);

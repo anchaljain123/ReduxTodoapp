@@ -9,6 +9,13 @@ export default class EditTodo extends Component {
       status
     }
   }
+  componentWillReceiveProps(props){
+    const {name, status} = props.todoData;
+    this.setState ({
+      name,
+      status
+    })
+  }
 
   saveChanges = () => {
     let ob = {

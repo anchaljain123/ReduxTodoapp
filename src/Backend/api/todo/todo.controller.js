@@ -19,7 +19,6 @@ exports.editTodo = (req,res,next) => {
 };
 
 exports.deleteTodo = (req,res,next) =>{
-  console.log(req.body,'req.body>>>')
   todoService.deleteTodo(req.body)
     .then(data => res.send(data))
     .catch(err => res.send({msg:err}))

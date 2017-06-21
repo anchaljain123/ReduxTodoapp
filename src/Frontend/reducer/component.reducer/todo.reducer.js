@@ -79,14 +79,13 @@ export const todoReducer = (state=initialState,action) => {
     }
 
     case DELETE_TODO_SUCCESS:{
-      console.log(action.data,">>")
       var arry = state.todos;
       for(var i=0;i<arry.length;i++) {
         if (arry[i]._id === action.data._id) {
           arry.splice(i, 1)
         }
       }
-      console.log('newtodo',arry)
+      console.log('newtodo',arry);
       return{
         ...state,
         loading:false,
