@@ -26,7 +26,7 @@ export default class EditTodo extends Component {
     this.props.editTodo(ob);
     this.setState({
       name: '',
-      status: ''
+      status: 'Pending'
     })
   };
 
@@ -42,7 +42,11 @@ export default class EditTodo extends Component {
     return (
       <div>
         <input type="text" value={this.state.name} onChange={(e) => this.setState({name: e.target.value})}/>
-        <input type="text" value={this.state.status} onChange={(e) => this.setState({status: e.target.value})}/>
+        <select value={this.state.status} onChange={(e) => this.setState({status:e.target.value})}>
+          <option value="Pending">Pending</option>
+          <option value="Inprocess">Inprocess</option>
+          <option value="Done">Done</option>
+        </select>
         <button onClick={this.saveChanges}>Save</button>
         <button onClick={this.cancelChanges}>Cancel</button>
       </div>

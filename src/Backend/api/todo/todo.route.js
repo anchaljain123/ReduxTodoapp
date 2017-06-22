@@ -5,6 +5,7 @@ const todoController =  require('./todo.controller');
 
 router.post('/saveTodo',todoController.saveTodo);
 router.get('/getTodos',todoController.getTodos);
+router.get('/fetchTodos',todoController.fetchTodos);
 router.put('/updateTodo',todoController.editTodo);
 router.delete('/deleteTodo',todoController.deleteTodo);
 

@@ -42,10 +42,9 @@ export const asyncsaveUser = (userData) => {
 }; //signup
 
 export const asyncgetUser = () => {
-
   return(dispatch) => {
     dispatch(asyncLoaderStarted());
-    fetch('/getUser',{
+     fetch('/getUser',{
       method: 'get',
       headers: {
         'Accept': 'application/json',
@@ -54,7 +53,9 @@ export const asyncgetUser = () => {
       credentials:'include'
     })
       .then(res=>res.json())
-      .then(data => dispatch(asyncGetUserSuccess(data)))
+      .then(data => {
+          dispatch(asyncGetUserSuccess(data));
+        })
       .catch(err=> {
         dispatch(asyncGetUserFailed(err))
       })

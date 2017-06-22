@@ -6,13 +6,19 @@ class TodoList extends Component {
   render() {
     const {todos} = this.props.todoReducer;
     const items = todos.map(item =>
-      <div key={item._id}>
+      <tr key={item._id}>
         <TodoRow todo={item}/>
-      </div>
+      </tr>
     );
     return (
       <div>
+        <div>
+        <span>Title</span>
+        <span>Status</span>
+        </div>
+        <div>
         {items}
+        </div>
       </div>
     )
   }

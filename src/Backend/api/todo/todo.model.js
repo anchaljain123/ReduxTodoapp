@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose'),
+  Schema = mongoose.Schema;
 
 const todoSchema = new mongoose.Schema({
   name:{
@@ -8,6 +9,11 @@ const todoSchema = new mongoose.Schema({
   status:{
     type:String,
     default:'Pending'
+  },
+  userID:{
+    type:Schema.Types.ObjectId,
+    ref:'User',
+    required: true,
   }
 },{
   versionKey:false,

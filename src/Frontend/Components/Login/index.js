@@ -63,7 +63,7 @@ class Login extends Component {
           <input type="submit" value="Login" onClick={ this.loginUser }/>
           <a href="/signup">NewUser</a>
           {
-            err ? <span>{err.msg}</span> : ''
+            err ? <span>Invalid Username or Password</span> : ''
           }
         </form>
       </div>

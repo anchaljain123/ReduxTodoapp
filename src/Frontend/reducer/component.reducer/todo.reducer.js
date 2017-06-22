@@ -7,7 +7,9 @@ import {
   UPDATE_TODO_SUCCESS,
   UPDATE_TODO_FAILED,
   DELETE_TODO_SUCCESS,
-  DELETE_TODO_FAILED
+  DELETE_TODO_FAILED,
+  FETCH_TODOS_SUCCESS,
+  FETCH_TODOS_FAILED,
 }from '../../constant'
 
 const initialState = {
@@ -41,6 +43,7 @@ export const todoReducer = (state=initialState,action) => {
       }
     }
     case GET_TODOS_SUCCESS:{
+      console.log(action.data,'gettodo----')
       return{
         ...state,
         loading:false,
@@ -56,6 +59,21 @@ export const todoReducer = (state=initialState,action) => {
       }
     }
 
+    case FETCH_TODOS_SUCCESS:{
+      console.log(action.data,'---feeds')
+     return{
+       ...state,
+       todos:action.data,
+       loading:false
+     }
+    }
+    case FETCH_TODOS_FAILED:{
+      return{
+        ...state,
+        loading:false,
+        err:action.err
+      }
+    }
     case UPDATE_TODO_SUCCESS:{
       var newTodo = state.todos;
       newTodo.filter(function (item,i) {
@@ -85,7 +103,6 @@ export const todoReducer = (state=initialState,action) => {
           arry.splice(i, 1)
         }
       }
-      console.log('newtodo',arry);
       return{
         ...state,
         loading:false,
@@ -100,6 +117,7 @@ export const todoReducer = (state=initialState,action) => {
         err:action.err
       }
     }
+
 
     default:
       return state;
