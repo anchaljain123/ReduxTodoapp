@@ -2,6 +2,7 @@ TODO APP
 ----------------------------
 
 *FRONTEND - HTML,CSS,REACT,REDUX
+____________________________________
 *BACKEND - NODEJS,EXPRESS,MONGODB
 
 
