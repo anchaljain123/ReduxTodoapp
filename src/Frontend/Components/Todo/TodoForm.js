@@ -18,10 +18,10 @@ export default class TodoForm extends Component{
 
   saveTodo = () => {
   let {_id} = this.props.userDetails;
-  let { name,status } = this.state;
+  let { name } = this.state;
   let ob = {
     name,
-    status,
+    status:'Pending',
     userID:_id
   };
 

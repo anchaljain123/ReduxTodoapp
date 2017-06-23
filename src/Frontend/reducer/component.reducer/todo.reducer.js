@@ -10,6 +10,8 @@ import {
   DELETE_TODO_FAILED,
   FETCH_TODOS_SUCCESS,
   FETCH_TODOS_FAILED,
+  SEARCH_TODOS_SUCCESS,
+  SEARCH_TODOS_FAILED
 }from '../../constant'
 
 const initialState = {
@@ -43,7 +45,6 @@ export const todoReducer = (state=initialState,action) => {
       }
     }
     case GET_TODOS_SUCCESS:{
-      console.log(action.data,'gettodo----')
       return{
         ...state,
         loading:false,
@@ -60,7 +61,7 @@ export const todoReducer = (state=initialState,action) => {
     }
 
     case FETCH_TODOS_SUCCESS:{
-      console.log(action.data,'---feeds')
+      console.log(action.data,'---feeds');
      return{
        ...state,
        todos:action.data,
@@ -118,6 +119,21 @@ export const todoReducer = (state=initialState,action) => {
       }
     }
 
+    case SEARCH_TODOS_SUCCESS:{
+      return{
+        ...state,
+        todos:action.data,
+        loading:false
+      }
+    }
+
+    case SEARCH_TODOS_FAILED:{
+      return{
+        ...state,
+        loading:false,
+        err:action.err
+      }
+    }
 
     default:
       return state;

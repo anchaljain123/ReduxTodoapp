@@ -8,5 +8,6 @@ router.get('/getTodos',todoController.getTodos);
 router.get('/fetchTodos',todoController.fetchTodos);
 router.put('/updateTodo',todoController.editTodo);
 router.delete('/deleteTodo',todoController.deleteTodo);
+router.get('/searchTodos',todoController.searchTodos);
 
 module.exports = router;

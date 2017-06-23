@@ -10,8 +10,8 @@ import {
   asyncdeleteTodoFailed,
   asyncfetchTodosSuccess,
   asyncfetchTodosFailed,
-  asyncsaveCommentSuccess,
-  asyncsaveCommentFailed
+  asyncsearchTodosSuccess,
+  asyncsearchTodosFailed
 
 } from  '../component.action/todo.action'
 import {
@@ -100,18 +100,14 @@ export const asyncgetAllTodos = () => {
   }
 };
 
-export const asyncsaveComment = (commentState) => {
-  return function (dispatch) {
-    fetch('/saveComment', {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(commentState),
-      method: 'post'
-    })
+export const asyncsearchTodos = (searchData,user) =>{
+  return (dispatch) => {
+    dispatch(asyncLoaderStarted());
+     fetch(`/searchTodos?data=${searchData}&user=${user}`)
       .then(res => res.json())
-      .then(data => dispatch(asyncsaveCommentSuccess(data)))
-      .catch(err => dispatch(asyncsaveCommentFailed(err)))
+      .then(data => {
+        dispatch(asyncsearchTodosSuccess(data));
+      })
+      .catch(err => dispatch(asyncsearchTodosFailed(err)))
   }
 };

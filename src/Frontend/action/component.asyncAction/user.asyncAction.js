@@ -44,7 +44,7 @@ export const asyncsaveUser = (userData) => {
 export const asyncgetUser = () => {
   return(dispatch) => {
     dispatch(asyncLoaderStarted());
-     fetch('/getUser',{
+     return fetch('/getUser',{
       method: 'get',
       headers: {
         'Accept': 'application/json',
@@ -55,6 +55,7 @@ export const asyncgetUser = () => {
       .then(res=>res.json())
       .then(data => {
           dispatch(asyncGetUserSuccess(data));
+          return data
         })
       .catch(err=> {
         dispatch(asyncGetUserFailed(err))

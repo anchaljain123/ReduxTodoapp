@@ -9,8 +9,8 @@ import {
   DELETE_TODO_FAILED,
   FETCH_TODOS_SUCCESS,
   FETCH_TODOS_FAILED,
-  SAVE_COMMENT_SUCCESS,
-  SAVE_COMMENT_FAILED
+  SEARCH_TODOS_SUCCESS,
+  SEARCH_TODOS_FAILED
 
 }from '../../constant'
 
@@ -76,16 +76,14 @@ export const asyncfetchTodosFailed = (err) => {
   }
 };
 
-export const asyncsaveCommentSuccess = (data) =>{
+export const asyncsearchTodosSuccess = (data) =>{
   return{
-    type:SAVE_COMMENT_SUCCESS,
-    data
+    type:SEARCH_TODOS_SUCCESS,data
   }
 };
 
-export const asyncsaveCommentFailed = (err) =>{
+export const asyncsearchTodosFailed = (err) =>{
   return{
-    type:SAVE_COMMENT_FAILED,
-    err
+    type:SEARCH_TODOS_FAILED,err
   }
 };

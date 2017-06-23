@@ -14,14 +14,16 @@ exports.saveTodo = (todoDetails) => {
 };
 
 exports.getTodos = (userDetail) => {
+  console.log(userDetail,'>>>user')
   return new Promise((resolve, reject) => {
     Todo.find({userID:userDetail})
       .populate('userID')
+      .sort()
       .exec((err, data) => {
         if (err) {
           reject(err)
         } else {
-          console.log(data,'--specifictodos')
+          console.log(data,'--specifictodos');
           resolve(data)
         }
       })
@@ -67,4 +69,22 @@ exports.deleteTodo = (todoId) => {
       }
     })
   })
+};
+
+exports.searchTodos = (val,user) =>{
+  return new Promise((resolve, reject) => {
+    const newRegex = new RegExp(val);
+    console.log(newRegex,'>>>')
+    Todo.find({name:{$regex:newRegex},userID:user})
+      .populate('userID')
+      .exec((err, data) => {
+        if (err) {
+          reject(err)
+        } else {
+          console.log(data,'--searchdata')
+          resolve(data)
+        }
+      });
+  })
+
 };

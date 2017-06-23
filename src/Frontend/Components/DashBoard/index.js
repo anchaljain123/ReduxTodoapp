@@ -1,10 +1,11 @@
 import React from 'react'
 import {connect} from  'react-redux'
 import Logout from '../Logout'
-import {Route,Redirect,Switch} from 'react-router-dom'
+import {Route, Redirect, Switch} from 'react-router-dom'
 import Todo from '../Todo'
 import Feeds from '../Feeds'
 import Navbar from '../Navbar'
+import PropTypes from 'prop-types'
 import isAuth from '../isAuthenticated'
 import {
   asyncgetUser,
@@ -13,8 +14,10 @@ import {
 
 class DashBoard extends React.Component {
   componentWillMount() {
-    this.props.getUser()
+    console.log('component mounted dashboard');
+    this.props.getUser();
   }
+
   render() {
     const {user} = this.props.userState;
     const {todos} = this.props;
@@ -24,20 +27,25 @@ class DashBoard extends React.Component {
         <Logout/>
         <Navbar/>
         <div>
-        <Switch>
-          <Route exact path="/dashboard/todos"
-                 render={props =><Todo {...props}  user={user} dispatch={this.props.dispatch} todos={todos}/>}
-          />
-          <Route  path="/dashboard/feeds" render={props =>
-            <Feeds {...props} user={user} dispatch={this.props.dispatch}/>}
-          />
-         {/* <Redirect from='/dashboard' to="/dashboard/todos"/>*/}
-        </Switch>
+          <Switch>
+            <Route exact path="/dashboard/todos"
+                   render={props => <Todo {...props} user={user} dispatch={this.props.dispatch} todos={todos} />}
+            />
+            <Route path="/dashboard/feeds" render={props =>
+              <Feeds {...props} user={user} dispatch={this.props.dispatch}/>}
+            />
+            <Redirect from='/dashboard' to="/dashboard/todos"/>
+          </Switch>
         </div>
       </div>
     )
   }
 }
+/*
+ DashBoard.contextTypes = {
+ router: PropTypes.object, // 'ask' for router
+ };
+ */
 
 const mapStateToProps = (state) => {
   return {
@@ -53,4 +61,5 @@ const mapDispatchToProps = (dispatch) => {
     dispatch: dispatch
   }
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(DashBoard);

@@ -1,3 +1,3 @@
-/**
- * Created by ttn on 22/6/17.
- */
+export const saveComment = () =>{
+
+}
