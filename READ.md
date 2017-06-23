@@ -1,13 +1,15 @@
 TODO APP
 ----------------------------
 
-FRONTEND - HTML,CSS,REACT,REDUX
-BACKEND - NODEJS,EXPRESS,MONGODB
-PORT - 4000
+*FRONTEND - HTML,CSS,REACT,REDUX
+____________________________________
+*BACKEND - NODEJS,EXPRESS,MONGODB
+
 
 Commands need for execution  :
 
 * npm install
 * npm start
+# localhost:4000
 
 
