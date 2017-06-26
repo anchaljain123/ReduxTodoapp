@@ -12,7 +12,6 @@ export default class Comment extends Component{
       postedBy:this.props.user._id,
       todoId:this.props.todo._id
     };
-
     this.props.dispatch(asyncsaveComment(commentOb));
   };
 
