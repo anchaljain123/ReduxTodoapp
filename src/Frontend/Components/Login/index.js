@@ -53,20 +53,26 @@ class Login extends Component {
   render() {
     const {err} = this.props.userState;
     return (
-      <div>
-        <form>
-          <h3>Login Form </h3>
-          <label> Enter UserName :</label>
-          <input type="text" value={this.state.username} onChange={(event) => this.saveHandler(event, 'username')}/>
-          <label>Enter Password : </label>
-          <input type="password" value={this.state.password} onChange={(event) => this.saveHandler(event, 'password')}/>
-          <input type="submit" value="Login" onClick={ this.loginUser }/>
-          <a href="/signup">NewUser</a>
+        <div className="jumbotron text-center row">
+          <h1>Login</h1>
           {
-            err ? <span>Invalid Username or Password</span> : ''
+            err ? <p>Invalid Username or Password</p> : ''
           }
-        </form>
-      </div>
+          <div className="col-sm-4 col-sm-push-4">
+            <form>
+                <input placeholder="Enter UserName :" type="text" className="form-control" value={this.state.username} onChange={(event) => this.saveHandler(event, 'username')}/><br/>
+                <input placeholder="Enter Password : " type="password"  className="form-control" value={this.state.password} onChange={(event) => this.saveHandler(event, 'password')}/><br/>
+                <div className="row">
+                  <div className="col-sm-5 col-sm-push-1">
+                    <input type="submit" className="btn btn-danger" value="Login" onClick={ this.loginUser }/>
+                  </div>
+                  <div className="col-sm-5">
+                    <a href="/signup" className="btn btn-danger">NewUser</a>
+                  </div>
+                </div>
+            </form>
+          </div>
+        </div>
     )
   }
 }

@@ -34,9 +34,14 @@ export default class TodoForm extends Component{
 
   render(){
     return(
-      <div>
-        <input type="text" value={this.state.name} onChange={(e)=>this.changeHandler(e,'name')}/>
-        <button type="submit" onClick={this.saveTodo}>AddTodo</button>
+      <div className="jumbotron text-center">
+        <div className="input-group">
+          <input type="text" className="form-control" value={this.state.name} onChange={(e)=>this.changeHandler(e,'name')}/>
+          <div className="input-group-btn">
+            <button className="btn btn-danger" type="submit" onClick={this.saveTodo}>AddTodo</button>
+          </div>
+        </div>
+
       </div>
     )
   }
