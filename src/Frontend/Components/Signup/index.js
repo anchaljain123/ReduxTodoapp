@@ -34,19 +34,19 @@ class Signup extends Component {
   render() {
     const {err,status} = this.props.userReducer;
     return (
-      <div>
-        <h3>Signup Form </h3>
-        <label> Enter UserName :</label>
-        <input type="text" value={this.state.username} onChange={(event) => this.saveHandler(event, 'username')} />
-        <label>Enter Password : </label>
-        <input type="password" value={this.state.password} onChange={(event) => this.saveHandler(event, 'password')} />
-        <input type="submit" value="signup" onClick={this.saveUser}/>
+      <div className="jumbotron text-center row">
+        <h1>Signup Form </h1>
         {
-          err ? <span>{err.msg}</span> : ''
+          err ? <p>{err.msg}</p> : ''
         }
         {
-          status?<span>Successfully Signed Up</span>:''
+          status?<p>Successfully Signed Up</p>:''
         }
+        <div className="col-sm-4 col-sm-push-4">
+          <input placeholder="Enter UserName :" className="form-control" type="text" value={this.state.username} onChange={(event) => this.saveHandler(event, 'username')} /><br/>
+          <input placeholder="Enter Password : " className="form-control" type="password" value={this.state.password} onChange={(event) => this.saveHandler(event, 'password')} /><br/>
+          <input type="submit" value="signup" className="btn btn-danger" onClick={this.saveUser}/>
+        </div>
       </div>
 
     )
