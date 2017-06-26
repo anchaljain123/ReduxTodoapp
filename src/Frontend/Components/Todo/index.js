@@ -59,8 +59,14 @@ class Todo extends Component {
     return (
       <div>
         <TodoForm savetodo={this.savetodoDetails} userDetails={this.props.user}/>
+        <div className="input-group" style={{width:"40%"}}>
+          <input type="text" placeholder="Search.." className="form-control" value={this.state.searchVal} onChange={this.handleChange}/>
+          <div className="input-group-btn">
+            <button className="btn btn-danger" type="submit">Search</button>
+          </div>
+        </div>
+        <br/>
         <TodoList userDetails={this.props.user} dispatch={this.props.dispatch}/>
-        <input type="text" placeholder="Search.." value={this.state.searchVal} onChange={this.handleChange}/>
       </div>
     )
   }

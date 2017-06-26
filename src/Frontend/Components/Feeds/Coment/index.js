@@ -17,9 +17,9 @@ export default class Comment extends Component{
 
   render(){
     return(
-      <div>
+      <td>
         <CommentForm saveComment={this.saveComment}/>
-      </div>
+      </td>
     )
   }
 }

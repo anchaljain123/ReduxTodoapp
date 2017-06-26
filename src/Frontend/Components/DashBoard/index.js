@@ -23,11 +23,12 @@ class DashBoard extends React.Component {
     const {todos} = this.props;
     return (
       <div>
-        <div className="jumbotron text-center">
+        <div className="jumbotron text-center row">
           <h1> HELLO {user.username}</h1>
+            <Logout/>
         </div>
         <div className="container-fluid">
-          <Logout/>
+
           <Navbar/>
           <div>
             <Switch>
