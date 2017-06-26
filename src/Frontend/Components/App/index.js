@@ -4,6 +4,7 @@ import LandingPage from '../LandingPg'
 import DashBoard from '../DashBoard'
 import Signup from '../Signup'
 import Login from '../Login'
+import "../../assets/css/style.css"
 /*
  Stateless Component containing Routes
  */

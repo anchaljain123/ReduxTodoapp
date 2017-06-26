@@ -23,19 +23,23 @@ class DashBoard extends React.Component {
     const {todos} = this.props;
     return (
       <div>
-        <h4> HELLO {user.username}</h4>
-        <Logout/>
-        <Navbar/>
-        <div>
-          <Switch>
-            <Route exact path="/dashboard/todos"
-                   render={props => <Todo {...props} user={user} dispatch={this.props.dispatch} todos={todos} />}
-            />
-            <Route path="/dashboard/feeds" render={props =>
-              <Feeds {...props} user={user} dispatch={this.props.dispatch}/>}
-            />
-            <Redirect from='/dashboard' to="/dashboard/todos"/>
-          </Switch>
+        <div className="jumbotron text-center">
+          <h1> HELLO {user.username}</h1>
+        </div>
+        <div className="container-fluid">
+          <Logout/>
+          <Navbar/>
+          <div>
+            <Switch>
+              <Route exact path="/dashboard/todos"
+                     render={props => <Todo {...props} user={user} dispatch={this.props.dispatch} todos={todos} />}
+              />
+              <Route path="/dashboard/feeds" render={props =>
+                <Feeds {...props} user={user} dispatch={this.props.dispatch}/>}
+              />
+              <Redirect from='/dashboard' to="/dashboard/todos"/>
+            </Switch>
+          </div>
         </div>
       </div>
     )
