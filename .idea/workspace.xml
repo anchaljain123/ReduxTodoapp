@@ -2,20 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f0fd30c-22a4-4782-a135-116e010d49e3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Frontend/Components/Feeds/Coment/ShowComments.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Backend/api/comment/comment.controller.js" afterPath="$PROJECT_DIR$/src/Backend/api/comment/comment.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Backend/api/comment/comment.model.js" afterPath="$PROJECT_DIR$/src/Backend/api/comment/comment.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Backend/api/comment/comment.route.js" afterPath="$PROJECT_DIR$/src/Backend/api/comment/comment.route.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Backend/api/comment/comment.service.js" afterPath="$PROJECT_DIR$/src/Backend/api/comment/comment.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Backend/configuration/app.js" afterPath="$PROJECT_DIR$/src/Backend/configuration/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Backend/configuration/routes.js" afterPath="$PROJECT_DIR$/src/Backend/configuration/routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Frontend/Components/Container.js" afterPath="$PROJECT_DIR$/src/Frontend/Components/Container.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Frontend/Components/DashBoard/index.js" afterPath="$PROJECT_DIR$/src/Frontend/Components/DashBoard/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Frontend/Components/Feeds/Coment/CommentForm.js" afterPath="$PROJECT_DIR$/src/Frontend/Components/Feeds/Coment/CommentForm.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Frontend/Components/Feeds/Coment/index.js" afterPath="$PROJECT_DIR$/src/Frontend/Components/Feeds/Coment/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Frontend/action/component.action/comment.action.js" afterPath="$PROJECT_DIR$/src/Frontend/action/component.action/comment.action.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Frontend/action/component.asyncAction/comment.asyncAction.js" afterPath="$PROJECT_DIR$/src/Frontend/action/component.asyncAction/comment.asyncAction.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Frontend/action/index.js" afterPath="$PROJECT_DIR$/src/Frontend/action/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Frontend/constant/index.js" afterPath="$PROJECT_DIR$/src/Frontend/constant/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Frontend/reducer/component.reducer/commentReducer.js" afterPath="$PROJECT_DIR$/src/Frontend/reducer/component.reducer/commentReducer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Frontend/Components/Feeds/FeedRow.js" afterPath="$PROJECT_DIR$/src/Frontend/Components/Feeds/FeedRow.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Frontend/Components/Feeds/index.js" afterPath="$PROJECT_DIR$/src/Frontend/Components/Feeds/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Frontend/Components/LandingPg/index.js" afterPath="$PROJECT_DIR$/src/Frontend/Components/LandingPg/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Frontend/Components/Logout/index.js" afterPath="$PROJECT_DIR$/src/Frontend/Components/Logout/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Frontend/Components/Todo/EditTodo.js" afterPath="$PROJECT_DIR$/src/Frontend/Components/Todo/EditTodo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Frontend/Components/Todo/TodoList.js" afterPath="$PROJECT_DIR$/src/Frontend/Components/Todo/TodoList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Frontend/Components/Todo/TodoRow.js" afterPath="$PROJECT_DIR$/src/Frontend/Components/Todo/TodoRow.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Frontend/Components/Todo/index.js" afterPath="$PROJECT_DIR$/src/Frontend/Components/Todo/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -53,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Frontend/Components/Feeds/Coment/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+            <state relative-caret-position="412">
+              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -77,10 +75,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="comment.service.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="comment.service.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Backend/api/comment/comment.service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="289">
               <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
               <folding>
                 <element signature="e#644#990#0" expanded="false" />
@@ -194,10 +192,10 @@
         <option value="$PROJECT_DIR$/src/Frontend/reducer/component.reducer/commentReducer.js" />
         <option value="$PROJECT_DIR$/src/Frontend/Components/Feeds/Coment/CommentRoe.js" />
         <option value="$PROJECT_DIR$/src/Backend/api/comment/comment.controller.js" />
-        <option value="$PROJECT_DIR$/src/Frontend/Components/Feeds/Coment/index.js" />
         <option value="$PROJECT_DIR$/src/Frontend/Components/Feeds/Coment/ShowComments.js" />
         <option value="$PROJECT_DIR$/src/Frontend/Components/Feeds/Coment/CommentRow.js" />
         <option value="$PROJECT_DIR$/src/Backend/api/comment/comment.service.js" />
+        <option value="$PROJECT_DIR$/src/Frontend/Components/Feeds/Coment/index.js" />
       </list>
     </option>
   </component>
@@ -666,12 +664,12 @@
       <workItem from="1498286218272" duration="25000" />
       <workItem from="1498289791366" duration="2778000" />
       <workItem from="1498478295787" duration="7617000" />
-      <workItem from="1498487732139" duration="477000" />
+      <workItem from="1498487732139" duration="778000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="185240000" />
+    <option name="totallyTimeSpent" value="185541000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -688,10 +686,10 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2112676" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32817337" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.626935" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30959752" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960877" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4009288" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.626935" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39969134" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1069,16 +1067,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Frontend/Components/Feeds/Coment/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Frontend/Components/Feeds/FeedRow.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1123,10 +1111,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Backend/api/comment/comment.service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="289">
           <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
           <folding>
             <element signature="e#644#990#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Frontend/Components/Feeds/Coment/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>

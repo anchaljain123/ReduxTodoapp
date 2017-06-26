@@ -14,10 +14,12 @@ export default class CommentForm extends React.Component{
 
   render(){
     return(
-      <div>
-        <input type="text" value={this.state.comment} placeholder="write comment" onChange={(event)=>this.setState({comment:event.target.value})}/>
-        <input type="submit" onClick={this.addComment} value="add Comment"/>
+    <div className="input-group">
+        <input type="text" className="form-control" value={this.state.comment} placeholder="write comment" onChange={(event)=>this.setState({comment:event.target.value})}/>
+      <div className="input-group-btn">
+        <input type="submit" className="btn btn-success" onClick={this.addComment} value="add Comment"/>
       </div>
+    </div>
     )
   }
 }

@@ -4,10 +4,10 @@ export default class FeedRow extends React.Component{
   render(){
     console.log(this.props.todo,'item---');
     return(
-      <div>
-        {this.props.todo.name}
+      <tbody>
+        <td>{this.props.todo.name}</td>
         <Comment user={this.props.user} todo={this.props.todo} dispatch={this.props.dispatch}/>
-      </div>
+      </tbody>
     )
   }
 }

@@ -19,13 +19,14 @@ export default class Comment extends Component {
     this.props.dispatch(asyncsaveComment(commentOb));
   };
 
-  render() {
-    console.log(this.props.todo,'>>>cmnt')
-    return (
-      <div>
+
+  render(){
+    return(
+      <td>
         <CommentForm saveComment={this.saveComment}/>
-        <ShowComments dispatch={this.props.dispatch} todo={this.props.todo}/>
-      </div>
+  <ShowComments dispatch={this.props.dispatch} todo={this.props.todo}/>
+      </td>
+
     )
   }
 }

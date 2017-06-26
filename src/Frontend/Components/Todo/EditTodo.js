@@ -40,16 +40,20 @@ export default class EditTodo extends Component {
 
   render() {
     return (
-      <div>
-        <input type="text" value={this.state.name} onChange={(e) => this.setState({name: e.target.value})}/>
-        <select value={this.state.status} onChange={(e) => this.setState({status:e.target.value})}>
-          <option value="Pending">Pending</option>
-          <option value="Inprocess">Inprocess</option>
-          <option value="Done">Done</option>
-        </select>
-        <button onClick={this.saveChanges}>Save</button>
-        <button onClick={this.cancelChanges}>Reset</button>
-      </div>
+
+      <td>
+        <form className="form-inline">
+          <input type="text" className="form-control" value={this.state.name} onChange={(e) => this.setState({name: e.target.value})}/>&nbsp;
+          <select className="btn btn-primary" value={this.state.status} onChange={(e) => this.setState({status:e.target.value})}>
+            <option value="Pending">Pending</option>
+            <option value="Inprocess">Inprocess</option>
+            <option value="Done">Done</option>
+          </select>&nbsp;
+          <button className="btn btn-success" onClick={this.saveChanges}>Save</button>&nbsp;
+          <button className="btn" onClick={this.cancelChanges}>Reset</button>
+        </form>
+      </td>
+
     )
   }
 }
