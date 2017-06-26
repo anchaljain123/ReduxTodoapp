@@ -29,19 +29,20 @@ class TodoRow extends Component {
       val = 'Edit'
 
     }
-
     return (
-      <tr>
-        {
-          this.state.edit ?
-            <EditTodo todoData={this.props.todo} editTodo={this.editTodo} />
-            :<td> {todo.name}-{todo.status}</td>
-        }
-        <td>
-          <button className="pull-right btn btn-warning" onClick={() => this.setState({edit: !this.state.edit})}>{val}</button>&nbsp;
-          <button className="pull-right btn btn-danger" style={{marginRight:"2%"}} onClick={this.deleteTodo}>Delete</button>
-        </td>
-      </tr>
+
+      <div className="row">
+        <div className="modal fade" id={todo._id} role="dialog">
+          <EditTodo todoData={this.props.todo} editTodo={this.editTodo} />
+        </div>
+        <br/>
+        <div className="col-sm-6">{todo.name}</div>
+        <div className="col-sm-6">
+          <button className=" btn btn-warning" style={{marginRight:"3%"}} data-toggle="modal" data-target={"#"+todo._id}>Edit</button>
+          <button className=" btn btn-danger" onClick={this.deleteTodo}>Delete</button>
+        </div>
+
+      </div>
     )
   }
 }

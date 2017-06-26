@@ -52,13 +52,18 @@ class TodoList extends Component {
     });
 
     const pendingItems = todos && pendingArray.map(item =>
+
           <TodoRow todo={item}/>
       );
     const inprocessItems = todos && inprocessArray.map(item =>
+
           <TodoRow todo={item}/>
+
       );
     const doneItems = todos && doneArray.map(item =>
+
           <TodoRow todo={item}/>
+
       );
     return (
       <div>
@@ -71,20 +76,42 @@ class TodoList extends Component {
               <option value="DateDesc">SortByDateDesc</option>
             </select>
           </button>
-        <div className="table-responsive">
-          <table className="table">
-            <thead>
-              <tr>
-                <th>Title-Status</th>
-                <th className="pull-right">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {pendingItems}
-              {inprocessItems}
-              {doneItems}
-            </tbody>
-          </table>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-sm-4 col-xs-12">
+              <div className="panel panel-default text-center">
+                <div className="panel-heading">
+                  <h1>Pending Items</h1>
+                </div>
+                <div class="panel-body">
+                  {pendingItems}
+                  <br/>
+                </div>
+              </div>
+            </div>
+            <div className="col-sm-4 col-xs-12">
+              <div className="panel panel-default text-center">
+                <div className="panel-heading">
+                  <h1>Inprocess Items</h1>
+                </div>
+                <div class="panel-body">
+                  {inprocessItems}
+                  <br/>
+                </div>
+              </div>
+            </div>
+            <div className="col-sm-4 col-xs-12">
+              <div className="panel panel-default text-center">
+                <div className="panel-heading">
+                  <h1>Done Items</h1>
+                </div>
+                <div class="panel-body">
+                  {doneItems}
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     )
