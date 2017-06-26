@@ -52,46 +52,41 @@ class TodoList extends Component {
     });
 
     const pendingItems = todos && pendingArray.map(item =>
-        <tr key={item._id}>
           <TodoRow todo={item}/>
-        </tr>
       );
     const inprocessItems = todos && inprocessArray.map(item =>
-        <tr key={item._id}>
           <TodoRow todo={item}/>
-        </tr>
       );
     const doneItems = todos && doneArray.map(item =>
-        <tr key={item._id}>
           <TodoRow todo={item}/>
-        </tr>
       );
     return (
       <div>
-        <div>
-          <span>Title</span>
-          <span>Status</span>
+          <button onClick={this.applyFilter}>
+            <select name="Filter" onChange={(e) => this.setState({filter: e.target.value})} value={this.state.filter}>
+              <option value="filter">Filter</option>
+              <option value="Asc">SortAsc</option>
+              <option value="Desc">SortDesc</option>
+              <option value="DateAsc">SortByDateAsc</option>
+              <option value="DateDesc">SortByDateDesc</option>
+            </select>
+          </button>
+        <div className="table-responsive">
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Title-Status</th>
+                <th className="pull-right">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {pendingItems}
+              {inprocessItems}
+              {doneItems}
+            </tbody>
+          </table>
         </div>
-        <td>
-          {pendingItems}
-        </td>
-        <td>
-          {inprocessItems}
-        </td>
-        <td>
-          {doneItems}
-        </td>
-        <button onClick={this.applyFilter}>
-          <select name="Filter" onChange={(e) => this.setState({filter: e.target.value})} value={this.state.filter}>
-            <option value="filter">Filter</option>
-            <option value="Asc">SortAsc</option>
-            <option value="Desc">SortDesc</option>
-            <option value="DateAsc">SortByDateAsc</option>
-            <option value="DateDesc">SortByDateDesc</option>
-          </select>
-        </button>
       </div>
-
     )
   }
 }
