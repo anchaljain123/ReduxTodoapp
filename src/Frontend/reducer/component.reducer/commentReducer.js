@@ -23,8 +23,8 @@ export const commentReducer = (state=initialState,action) => {
     }
 
     case SAVE_COMMENT_SUCCESS:{
-      console.log(action.data)
-      const commentData = state.comments.concat(action.data)
+      const commentData = state.comments.concat(action.data);
+      console.log(commentData,'>>>savecmnt reducer==============>')
       return{
         ...state,
         loading:false,
@@ -41,7 +41,7 @@ export const commentReducer = (state=initialState,action) => {
     }
 
     case GET_COMMENTS_SUCCESS:{
-      console.log(action.data,'>>>reducer------------------------')
+      console.log(action.data,'>>>reducer getComments==============>')
       return{
         ...state,
         loading:false,

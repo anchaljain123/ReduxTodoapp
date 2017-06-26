@@ -16,7 +16,6 @@ const newComment = new Comment(todoDetails);
 exports.getComments = function (res) {
   Comment.find({})
     .populate('postedBy')
-    .populate('todoId')
     .exec((err, data) => {
       if (err)
         res.send({error: err});

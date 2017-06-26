@@ -1,19 +1,24 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import CommentRow from './CommentRow'
+import {
+  asyncsaveComment, asyncgetComments
+}from '../../../action'
 
 class ShowComments extends Component {
+componentWillReceiveProps(newProps){
+  console.log(newProps,'>>>compwillrevcprops')
+}
   render() {
-    console.log(this.props, '>>showcmnt');
     let {user} = this.props.userReducer;
-    let commentsArray = this.props.commentReducer.comments;
-    console.log(commentsArray);
+    //let commentsArray = this.props.commentReducer.comments;
+    console.log(this.props.comments,'showcmnt');
     return (
       <div>
         {
-          commentsArray.map((item) => {
-            if (item.todoId._id === this.props.todo._id) {
-              return <CommentRow item={item}/>
+          this.props.comments.map((item) => {
+            if (item.todoId === this.props.todo._id) {
+              return <CommentRow key={item._id} item={item}/>
             }
           })
         }

@@ -52,13 +52,13 @@ class TodoList extends Component {
     });
 
     const pendingItems = todos && pendingArray.map(item =>
-          <TodoRow todo={item}/>
+          <TodoRow key={item._id} todo={item}/>
       );
     const inprocessItems = todos && inprocessArray.map(item =>
-          <TodoRow todo={item}/>
+          <TodoRow key={item._id} todo={item}/>
       );
     const doneItems = todos && doneArray.map(item =>
-          <TodoRow todo={item}/>
+          <TodoRow key={item._id} todo={item}/>
       );
     return (
       <div>

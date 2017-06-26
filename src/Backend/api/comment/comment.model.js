@@ -6,11 +6,12 @@ const CommentSchema = new mongoose.Schema({
     type:String,
     required:true
   },
-  todoId:{
-    type:Schema.Types.ObjectId,
-    ref:'Todo',
-    required: true,
-  },
+  // todoId:{
+  //   type:Schema.Types.ObjectId,
+  //   ref:'Todo',
+  //   required: true,
+  // },
+  todoId:Object,
   postedBy:{
     type:Schema.Types.ObjectId,
     ref:'User',

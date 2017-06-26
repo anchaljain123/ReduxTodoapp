@@ -12,8 +12,7 @@ class Feeds extends React.Component {
     console.log(this.props.todoReducer.todos, ">>>feeds");
     const {todos} = this.props.todoReducer;
     const feeds = todos.map(item =>
-
-        <FeedRow todo={item} user={this.props.user} dispatch={this.props.dispatch}/>
+        <FeedRow key={item._id} todo={item} user={this.props.user} dispatch={this.props.dispatch}/>
     );
     return (
         <table className="table">

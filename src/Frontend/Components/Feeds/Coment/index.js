@@ -1,16 +1,16 @@
 import React, {Component} from 'react'
 import CommentForm from './CommentForm'
+import {connect} from 'react-redux'
 import ShowComments from './ShowComments'
 import {
   asyncsaveComment, asyncgetComments
 }from '../../../action'
 
-export default class Comment extends Component {
+class Comment extends Component {
   componentWillMount() {
     this.props.dispatch(asyncgetComments())
   }
-
-  saveComment = (commentState) => {
+    saveComment = (commentState) => {
     let commentOb = {
       comment: commentState.comment,
       postedBy: this.props.user._id,
@@ -18,17 +18,17 @@ export default class Comment extends Component {
     };
     this.props.dispatch(asyncsaveComment(commentOb));
   };
-
-
-  render(){
-    return(
+  render() {
+    let {comments} = this.props.commentReducer;
+    return (
       <td>
         <CommentForm saveComment={this.saveComment}/>
-  <ShowComments dispatch={this.props.dispatch} todo={this.props.todo}/>
+        <ShowComments todo={this.props.todo} comments={comments}/>
       </td>
 
     )
   }
 }
 
+export default connect(state=>state)(Comment)
 
