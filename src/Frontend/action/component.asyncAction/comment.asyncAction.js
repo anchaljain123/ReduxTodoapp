@@ -1,7 +1,9 @@
 import fetch from 'isomorphic-fetch'
 import {
   asyncsaveCommentSuccess,
-  asyncsaveCommentFailed
+  asyncsaveCommentFailed,
+  asyncgetCommentSuccess,
+  asyncgetCommentFailed
 } from  '../component.action/comment.action'
 import {
   asyncLoaderStarted
@@ -22,5 +24,15 @@ export const asyncsaveComment = (commentState) => {
       .then(res => res.json())
       .then(data => dispatch(asyncsaveCommentSuccess(data)))
       .catch(err => dispatch(asyncsaveCommentFailed(err)))
+  }
+};
+
+export const asyncgetComments = () =>{
+  return function (dispatch) {
+    dispatch(asyncLoaderStarted());
+    fetch('/getComments')
+      .then(res => res.json())
+      .then(data => dispatch(asyncgetCommentSuccess(data)))
+      .catch(err => dispatch(asyncgetCommentFailed(err)))
   }
 };

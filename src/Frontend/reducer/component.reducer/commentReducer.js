@@ -1,7 +1,9 @@
 import {
 LOADER_STARTED,
   SAVE_COMMENT_SUCCESS,
-  SAVE_COMMENT_FAILED
+  SAVE_COMMENT_FAILED,
+  GET_COMMENTS_SUCCESS,
+  GET_COMMENTS_FAILED
 }from '../../constant'
 
 const initialState = {
@@ -21,9 +23,12 @@ export const commentReducer = (state=initialState,action) => {
     }
 
     case SAVE_COMMENT_SUCCESS:{
+      console.log(action.data)
+      const commentData = state.comments.concat(action.data)
       return{
         ...state,
-        loading:false
+        loading:false,
+        comments:commentData
       }
     }
 
@@ -35,6 +40,22 @@ export const commentReducer = (state=initialState,action) => {
       }
     }
 
+    case GET_COMMENTS_SUCCESS:{
+      console.log(action.data,'>>>reducer------------------------')
+      return{
+        ...state,
+        loading:false,
+        comments:action.data
+      }
+    }
+
+    case GET_COMMENTS_FAILED:{
+      return{
+        ...state,
+        loading:false,
+        err:action.err
+      }
+    }
     default:
       return state;
   }

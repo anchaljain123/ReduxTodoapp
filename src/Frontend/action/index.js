@@ -7,5 +7,5 @@ export {
 } from './component.asyncAction/todo.asyncAction'
 
 export {
-  asyncsaveComment
+  asyncsaveComment,asyncgetComments
 }from './component.asyncAction/comment.asyncAction'

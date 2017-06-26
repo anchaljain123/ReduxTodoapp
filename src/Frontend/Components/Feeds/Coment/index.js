@@ -1,25 +1,33 @@
-import React,{Component} from 'react'
+import React, {Component} from 'react'
 import CommentForm from './CommentForm'
+import ShowComments from './ShowComments'
 import {
-  asyncsaveComment
+  asyncsaveComment, asyncgetComments
 }from '../../../action'
 
-export default class Comment extends Component{
+export default class Comment extends Component {
+  componentWillMount() {
+    this.props.dispatch(asyncgetComments())
+  }
 
   saveComment = (commentState) => {
     let commentOb = {
-      comment:commentState.comment,
-      postedBy:this.props.user._id,
-      todoId:this.props.todo._id
+      comment: commentState.comment,
+      postedBy: this.props.user._id,
+      todoId: this.props.todo._id
     };
     this.props.dispatch(asyncsaveComment(commentOb));
   };
 
-  render(){
-    return(
+  render() {
+    console.log(this.props.todo,'>>>cmnt')
+    return (
       <div>
         <CommentForm saveComment={this.saveComment}/>
+        <ShowComments dispatch={this.props.dispatch} todo={this.props.todo}/>
       </div>
     )
   }
 }
+
+
