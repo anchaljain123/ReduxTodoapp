@@ -48,7 +48,7 @@ export default class EditTodo extends Component {
           <option value="Done">Done</option>
         </select>
         <button onClick={this.saveChanges}>Save</button>
-        <button onClick={this.cancelChanges}>Cancel</button>
+        <button onClick={this.cancelChanges}>Reset</button>
       </div>
     )
   }
