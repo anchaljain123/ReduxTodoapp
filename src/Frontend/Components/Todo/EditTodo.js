@@ -40,6 +40,7 @@ export default class EditTodo extends Component {
 
   render() {
     return (
+
       <td>
         <form className="form-inline">
           <input type="text" className="form-control" value={this.state.name} onChange={(e) => this.setState({name: e.target.value})}/>&nbsp;
@@ -49,9 +50,10 @@ export default class EditTodo extends Component {
             <option value="Done">Done</option>
           </select>&nbsp;
           <button className="btn btn-success" onClick={this.saveChanges}>Save</button>&nbsp;
-          <button className="btn" onClick={this.cancelChanges}>Cancel</button>
+          <button className="btn" onClick={this.cancelChanges}>Reset</button>
         </form>
       </td>
+
     )
   }
 }

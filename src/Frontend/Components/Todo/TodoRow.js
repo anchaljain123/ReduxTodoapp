@@ -2,18 +2,18 @@ import React, {Component} from 'react'
 import EditTodo from './EditTodo'
 import {connect} from 'react-redux'
 import {
-  asyncUpdateTodo,asyncDeleteTodo
+  asyncUpdateTodo, asyncDeleteTodo
 }from '../../action'
 
 class TodoRow extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    }
+    this.state = {}
   }
+
   deleteTodo = () => {
-    const { todo } = this.props;
-    this.props.dispatch(asyncDeleteTodo({id:todo._id}));
+    const {todo} = this.props;
+    this.props.dispatch(asyncDeleteTodo({id: todo._id}));
   };
 
   editTodo = (changedTodoState) => {
@@ -21,7 +21,15 @@ class TodoRow extends Component {
   };
 
   render() {
-    const { todo } = this.props;
+    const {todo} = this.props;
+    var val = '';
+    if (this.state.edit) {
+         val = 'Cancel'
+    }else {
+      val = 'Edit'
+
+    }
+
     return (
       <tr>
         {
@@ -30,7 +38,7 @@ class TodoRow extends Component {
             :<td> {todo.name}-{todo.status}</td>
         }
         <td>
-          <button className="pull-right btn btn-warning" onClick={() => this.setState({edit: !this.state.edit})}>Edit</button>&nbsp;
+          <button className="pull-right btn btn-warning" onClick={() => this.setState({edit: !this.state.edit})}>{val}</button>&nbsp;
           <button className="pull-right btn btn-danger" style={{marginRight:"2%"}} onClick={this.deleteTodo}>Delete</button>
         </td>
       </tr>
@@ -38,4 +46,4 @@ class TodoRow extends Component {
   }
 }
 
-export default connect()(TodoRow);
+          export default connect()(TodoRow);

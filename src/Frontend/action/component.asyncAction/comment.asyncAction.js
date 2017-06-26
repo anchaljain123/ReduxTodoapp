@@ -8,7 +8,7 @@ import {
 }from '../component.action/user.actions'
 
 export const asyncsaveComment = (commentState) => {
-  console.log(commentState,'=======asynccmmnt')
+  console.log(commentState,'=======asynccmmnt');
   return function (dispatch) {
     dispatch(asyncLoaderStarted());
     fetch('/saveComment', {
