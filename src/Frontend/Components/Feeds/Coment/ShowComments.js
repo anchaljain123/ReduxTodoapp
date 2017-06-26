@@ -18,7 +18,7 @@ componentWillReceiveProps(newProps){
         {
           this.props.comments.map((item) => {
             if (item.todoId === this.props.todo._id) {
-              return <CommentRow key={item._id} item={item}/>
+              return <CommentRow key={item._id} item={item} user={user} dispatch={this.props.dispatch}/>
             }
           })
         }

@@ -9,7 +9,10 @@ export default class CommentForm extends React.Component{
   }
 
   addComment = () => {
-    this.props.saveComment(this.state)
+    this.props.saveComment(this.state);
+    this.setState({
+      comment:''
+    })
   };
 
   render(){
