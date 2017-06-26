@@ -32,16 +32,17 @@ class TodoRow extends Component {
     return (
 
       <div className="row">
-        <div className="modal fade" id={todo._id} role="dialog">
-          <EditTodo todoData={this.props.todo} editTodo={this.editTodo} />
-        </div>
+
         <br/>
-        <div className="col-sm-6">{todo.name}</div>
-        <div className="col-sm-6">
+        <div className="col-sm-12"><p style={{wordWrap: "break-word"}}>{todo.name}</p></div>
+
+        <div className="col-sm-12">
           <button className=" btn btn-warning" style={{marginRight:"3%"}} data-toggle="modal" data-target={"#"+todo._id}>Edit</button>
           <button className=" btn btn-danger" onClick={this.deleteTodo}>Delete</button>
         </div>
-
+        <div className="modal fade" id={todo._id} role="dialog">
+          <EditTodo todoData={this.props.todo} editTodo={this.editTodo} />
+        </div>
       </div>
     )
   }
