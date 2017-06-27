@@ -24,7 +24,7 @@ export const commentReducer = (state=initialState,action) => {
 
     case SAVE_COMMENT_SUCCESS:{
       const commentData = state.comments.concat(action.data);
-      console.log(commentData,'>>>savecmnt reducer==============>')
+      console.log(action.data,'>>>savecmnt reducer==============>')
       return{
         ...state,
         loading:false,
