@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import TodoRow from './TodoRow'
-import {DragSource, DragDropContext, DropTarget, DragLayer} from 'react-dnd';
-import Draggable from 'react-draggable';
+import from 'dra'
+
 import {connect} from 'react-redux'
 import {
   asyncapplyFilter
@@ -55,7 +55,6 @@ class TodoList extends Component {
 
     const pendingItems = todos && pendingArray.map(item =>
 
-
           <TodoRow todo={item} key={item._id}/>
       );
     const inprocessItems = todos && inprocessArray.map(item =>
@@ -86,21 +85,10 @@ class TodoList extends Component {
                 <div className="panel-heading">
                   <h1>Todo Items</h1>
                 </div>
-                <Draggable
-                  axis="x"
-                  handle=".handle"
-                  defaultPosition={{x: 0, y: 0}}
-                  position={null}
-                  grid={[25, 25]}
-                  onStart={this.handleStart}
-                  onDrag={this.handleDrag}
-                  onStop={this.handleStop}>
                 <div class="panel-body">
                   {pendingItems}
                   <br/>
                 </div>
-                </Draggable>
-
               </div>
             </div>
             <div className="col-sm-4 col-xs-12">
