@@ -11,7 +11,9 @@ import {
   FETCH_TODOS_SUCCESS,
   FETCH_TODOS_FAILED,
   SEARCH_TODOS_SUCCESS,
-  SEARCH_TODOS_FAILED
+  SEARCH_TODOS_FAILED,
+  CHANGE_STATUS_SUCCESS,
+  CHANGE_STATUS_FAILED
 }from '../../constant'
 
 const initialState = {
@@ -128,6 +130,30 @@ export const todoReducer = (state=initialState,action) => {
     }
 
     case SEARCH_TODOS_FAILED:{
+      return{
+        ...state,
+        loading:false,
+        err:action.err
+      }
+    }
+
+    case CHANGE_STATUS_SUCCESS:{
+
+      let newTodo = state.todos;
+      newTodo.filter(function (item,i) {
+        if(item._id === action.data._id){
+          newTodo[i].status=action.data.status;
+        }
+      });
+      console.log(newTodo,'---reducer---------------------');
+      return{
+        ...state,
+        loading:false,
+        todos:newTodo
+      }
+    }
+
+    case CHANGE_STATUS_FAILED:{
       return{
         ...state,
         loading:false,

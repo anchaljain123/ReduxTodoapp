@@ -25,7 +25,7 @@ export const asyncgetComments = () =>{
 
 export const asyncsaveComment = (commentState) => {
   console.log(commentState,'=======asynccmmnt');
-  return function (dispatch) {
+  return function (dispatch,getStore) {
     dispatch(asyncLoaderStarted());
     fetch('/saveComment', {
       headers: {
@@ -37,8 +37,11 @@ export const asyncsaveComment = (commentState) => {
     })
       .then(res => res.json())
       .then(data => {
-        dispatch(asyncsaveCommentSuccess(data))
-        dispatch(asyncgetComments())
+        data.postedBy = getStore().userReducer.user;
+        console.log(data,'>>>>>>>>>>>>>>>store')
+        dispatch(asyncsaveCommentSuccess(data));
+
+        //dispatch(asyncgetComments())
       })
       .catch(err => dispatch(asyncsaveCommentFailed(err)))
   }
@@ -47,7 +50,7 @@ export const asyncsaveComment = (commentState) => {
 
 export const asyncdeleteComment = (commentData) => {
   return(dispatch) =>{
-    fetch(deleteCommentURI,{
+    fetch('/deleteComment',{
       method:'delete',
       headers: {
         'Accept': 'application/json',
@@ -57,6 +60,7 @@ export const asyncdeleteComment = (commentData) => {
     })
       .then(res => res.json())
       .then(data => {
+        console.log(data,'---asyncdata')
         dispatch(asyncDeleteCommentSuccess(data));
       })
       .catch(err => {

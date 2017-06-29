@@ -7,3 +7,7 @@ export const saveComment = (req,res,next)  => {
 export const getComments = (req,res,next) =>{
   commentService.getComments(res)
 };
+
+export const deleteComment = (req,res,next) => {
+  commentService.deleteComment(req.body,res)
+};

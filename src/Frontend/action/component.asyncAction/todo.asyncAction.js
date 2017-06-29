@@ -11,7 +11,9 @@ import {
   asyncfetchTodosSuccess,
   asyncfetchTodosFailed,
   asyncsearchTodosSuccess,
-  asyncsearchTodosFailed
+  asyncsearchTodosFailed,
+  asyncchangeTodoStatusSuccess,
+  asyncchangeTodoStatusFailed
 
 } from  '../component.action/todo.action'
 import {
@@ -109,5 +111,23 @@ export const asyncsearchTodos = (searchData,user) =>{
         dispatch(asyncsearchTodosSuccess(data));
       })
       .catch(err => dispatch(asyncsearchTodosFailed(err)))
+  }
+};
+
+export const asyncchangeTodoStatus = (todoData) => {
+  console.log(todoData,'--asynchangestatus=====');
+  return (dispatch) => {
+    dispatch(asyncLoaderStarted());
+    fetch('/changeStatus', {
+      method: 'put',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(todoData)
+    })
+      .then(res => res.json())
+      .then(data => dispatch(asyncchangeTodoStatusSuccess(data)))
+      .catch(err => dispatch(asyncchangeTodoStatusFailed(err)))
   }
 };

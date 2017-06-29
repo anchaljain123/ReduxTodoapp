@@ -88,3 +88,17 @@ exports.searchTodos = (val,user) =>{
   })
 
 };
+
+exports.changeStatus = (todoDetails) => {
+  return new Promise( (resolve,reject) => {
+    Todo.findOneAndUpdate({_id: todoDetails.todoId}, {$set: {status: todoDetails.changedStatus}}, {new: true},
+       (err, data) =>{
+        if (err) {
+          reject(err);
+        } else {
+          console.log(data,'----')
+          resolve(data);
+        }
+    })
+  })
+};

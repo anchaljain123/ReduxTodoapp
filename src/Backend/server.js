@@ -21,7 +21,7 @@ app.use(webpackMiddleware(compiler,{
 configFile.appStarted(app);
 
 app.use('/*', (req,res) => {
-    res.sendFile('/home/ttn/WebstormProjects/advancedTodo/index.html')
+    res.sendFile('/home/ttn/Desktop/ReduxTodoapp/index.html')
 });
 app.listen(PORT, console.log("Running on port >>>>>>" + PORT));
 

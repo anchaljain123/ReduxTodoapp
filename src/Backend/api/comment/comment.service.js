@@ -26,19 +26,15 @@ exports.getComments = function (res) {
     })
 };
 
-exports.deleteComment = (commentId, res) => {
-  Comment.remove({'_id': commentId.id}, (err, data) => {
-    if (err)
-      res.send({msg: "Failed to remove document", error: err});
-    else {
-      Comment.find((err, data) => {
-        if (err) {
-          res.send({msg: "Failed to fetch data", error: err})
-        }
-        else {
-          res.send(data);
-        }
-      })
-    }
-  })
+exports.deleteComment = (commentId,res) => {
+
+   Comment.findByIdAndRemove(commentId.id,(err,data)=>{
+     if(err) {
+       res.send(err)
+     }else{
+       console.log(data,'data------------')
+       res.send(data)
+     }
+   });
+
 };

@@ -24,10 +24,14 @@ exports.deleteTodo = (req, res, next) => {
     .then(data => res.send(data))
     .catch(err => res.send({msg: err}))
 };
-
 exports.searchTodos = (req,res,next) =>{
-  console.log(req.query.data,'-----------',req.query.user);
     todoService.searchTodos(req.query.data,req.query.user)
     .then(data=>res.send(data))
     .catch(err=>res.send({msg:err}))
+};
+
+exports.changeStatus = (req,res,next) =>{
+    todoService.changeStatus(req.body)
+      .then(data => res.send(data))
+      .catch(err => res.send({msg:err}))
 };

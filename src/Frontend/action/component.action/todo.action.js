@@ -10,7 +10,9 @@ import {
   FETCH_TODOS_SUCCESS,
   FETCH_TODOS_FAILED,
   SEARCH_TODOS_SUCCESS,
-  SEARCH_TODOS_FAILED
+  SEARCH_TODOS_FAILED,
+  CHANGE_STATUS_SUCCESS,
+  CHANGE_STATUS_FAILED,
 
 }from '../../constant'
 
@@ -85,5 +87,17 @@ export const asyncsearchTodosSuccess = (data) =>{
 export const asyncsearchTodosFailed = (err) =>{
   return{
     type:SEARCH_TODOS_FAILED,err
+  }
+};
+
+export const asyncchangeTodoStatusSuccess = (data) =>{
+  return{
+    type:CHANGE_STATUS_SUCCESS,data
+  }
+};
+
+export const asyncchangeTodoStatusFailed = (err) => {
+  return{
+    type:CHANGE_STATUS_FAILED,err
   }
 };
