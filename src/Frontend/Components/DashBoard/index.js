@@ -22,14 +22,19 @@ class DashBoard extends React.Component {
     const {user} = this.props.userState;
     const {todos} = this.props;
     return (
-      <div>
-        <div className="jumbotron text-center row">
-          <h1> HELLO {user.username}</h1>
-            <Logout/>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-sm-6">
+            <h3> HELLO {user.username}</h3>
+          </div>
+          <div className="col-sm-6">
+            <p className=" pull-right"> <Logout/></p>
+          </div>
         </div>
         <div className="container-fluid">
 
           <Navbar/>
+          <br/>
           <div>
             <Switch>
               <Route exact path="/dashboard/todos"
