@@ -96,7 +96,6 @@ exports.changeStatus = (todoDetails) => {
         if (err) {
           reject(err);
         } else {
-          console.log(data,'----')
           resolve(data);
         }
     })

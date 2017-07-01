@@ -21,8 +21,6 @@ export const asyncgetComments = () =>{
   }
 };
 
-
-
 export const asyncsaveComment = (commentState) => {
   console.log(commentState,'=======asynccmmnt');
   return function (dispatch,getStore) {

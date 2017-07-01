@@ -1,7 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
 import {Provider} from 'react-redux';
+import en from 'react-intl/locale-data/en'
+import it from 'react-intl/locale-data/it'
 import store from './src/Frontend/store'
+import  {IntlProvider} from 'react-intl-redux'
 import Container from './src/Frontend/Components/Container'
 
 render(

@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import TodoRow from './TodoRow';
 import dragula from 'dragula';
+import '../../assets/css/dragula.css'
 import {connect} from 'react-redux';
 import { findDOMNode } from 'react-dom';
 import { asyncapplyFilter , asyncchangeTodoStatus } from '../../action';

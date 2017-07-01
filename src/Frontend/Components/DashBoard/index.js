@@ -1,4 +1,5 @@
 import React from 'react'
+import { addLocaleData, FormattedMessage } from 'react-intl'
 import {connect} from  'react-redux'
 import Logout from '../Logout'
 import {Route, Redirect, Switch} from 'react-router-dom'
@@ -21,10 +22,14 @@ class DashBoard extends React.Component {
   render() {
     const {user} = this.props.userState;
     const {todos} = this.props;
+    const Bannerstyle = {
+      marginTop: "75px",
+    };
     return (
       <div>
-        <div className="jumbotron text-center row">
-          <h1> HELLO {user.username}</h1>
+        <div className="text-center row" style={Bannerstyle}>
+          {/*<FormattedMessage id="Hello" defaultMessage={`Hello {user.username}`} />*/}
+          <h4>HELLO {user.username}</h4>
             <Logout/>
         </div>
         <div className="container-fluid">
