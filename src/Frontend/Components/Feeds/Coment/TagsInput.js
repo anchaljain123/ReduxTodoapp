@@ -7,7 +7,7 @@ export default class CommentForm extends React.Component {
     super(props);
     this.state = {
       tag: " ",
-      arry: ''
+      arry: []
     }
   }
 
@@ -18,8 +18,9 @@ export default class CommentForm extends React.Component {
   };
 
   handleKeyPress = (event) => {
-    let nstring = "";
+    let emailArray = [];
     if (event.key === 'Enter') {
+      let nstring = "",flag = 0;
       nstring = this.state.tag;
       nstring = nstring.split(" ");
       nstring.filter((item, i) => {
@@ -29,21 +30,29 @@ export default class CommentForm extends React.Component {
       });
       nstring.forEach(item => {
         if (emailRegex.test(item)) {
-          this.props.addTags(item)
+          emailArray.push(item);
         }
-      })
+      });
+      this.setState({
+        tag:nstring,
+        arry:emailArray
+      },()=>{
+        this.props.addTags(this.state.arry);
+        this.setState({
+          tag: '',
+          arry : []
+        })
+      });
     }
-
-
   };
   render() {
     return (
-      <div className="input-group">
+      <div className="input-group" style={{display:'inline-block'}}>
         <input
           type="text"
           className="form-control"
           value={this.state.tag}
-          placeholder="write tag"
+          placeholder="Add Tags"
           onChange={this.handleChange}
           onKeyDown={this.handleKeyPress}
         />

@@ -12,7 +12,8 @@ const CommentSchema = new mongoose.Schema({
     ref:'User',
     required: true,
   },
-  tagEmail:String
+  tagEmail:String,
+  taggedBy:String,
 },{
   timestamps:true
 });

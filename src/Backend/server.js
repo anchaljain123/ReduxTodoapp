@@ -13,10 +13,13 @@ const compiler = webpack(webpackFile);
 app.use(morgan("dev"));
 app.use(bodyParser());
 app.use(cors({origin:true,credentials:true}));
+
 app.use(webpackMiddleware(compiler,{
     hot:true,
     historyApiFallback:true,
 }));
+
+app.use('/favicon.ico', express.static('/home/ttn/Desktop/ReduxTodoapp/src/Frontend/assets/img/favicon.ico'));
 
 configFile.appStarted(app);
 

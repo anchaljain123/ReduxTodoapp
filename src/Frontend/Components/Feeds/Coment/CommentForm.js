@@ -10,22 +10,17 @@ export default class CommentForm extends React.Component {
       tags: ''
     }
   }
+
   addTags = (tagVal) => {
-
-    let newTags = this.state.tags;
-    newTags = [...newTags, tagVal];
-
-    console.log(this.state.tags,'..state[]');
-
+    console.log(tagVal, '..state[]');
     this.setState({
-      tags: newTags
-    },()=>{
+      tags: tagVal
+    }, () => {
       console.log(this.state.tags);
     })
   };
 
   addComment = () => {
-    console.log(this.state,'===state')
     this.props.saveComment(this.state);
     this.setState({
       comment: '',
@@ -36,7 +31,7 @@ export default class CommentForm extends React.Component {
   render() {
     return (
       <div className="input-group">
-        <TagInput addTags={this.addTags}/>
+        <TagInput addTags={this.addTags}/> <span style={{display:'inline-block'}}>(press Enter)</span>
         <input type="text" className="form-control" value={this.state.comment} placeholder="write comment"
                onChange={(event) => this.setState({comment: event.target.value})}
         />
