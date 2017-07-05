@@ -1,6 +1,7 @@
 const express = require('express');
 const webpack = require('webpack');
 const cors = require('cors');
+const path = require('path');
 import morgan from 'morgan';
 const bodyParser = require('body-parser');
 const webpackMiddleware = require('webpack-dev-middleware');
@@ -19,13 +20,13 @@ app.use(webpackMiddleware(compiler,{
     historyApiFallback:true,
 }));
 
-app.use('/favicon.ico', express.static('/home/ttn/Desktop/ReduxTodoapp/src/Frontend/assets/img/favicon.ico'));
+app.use('/favicon.ico', express.static(path.resolve(__dirname, '../Frontend/assets/img/favicon.ico')));
 
 configFile.appStarted(app);
 
 app.use('/*', (req,res) => {
-    res.sendFile('/home/ttn/Desktop/ReduxTodoapp/index.html')
+    res.sendFile(path.resolve(__dirname, '../../index.html'))
 });
-app.listen(PORT, console.log("Running on port >>>>>>" + PORT));
+app.listen(PORT, console.log("Running on port >>>>>>>>>>>>>>>" + PORT));
 
 //var PORT = process.env.npm_package_config_port;

@@ -24,9 +24,9 @@ class Login extends Component {
     e.preventDefault();
     this.props.asyncLoginUser(this.state)
       .then(data => {
-         if (data) {
-           this.props.history.push('/dashboard');
-         }
+        if (data) {
+          this.props.history.push('/dashboard');
+        }
       })
     /*   new Promise((resolve, reject) => {
      this.props.login(this.state)
@@ -53,26 +53,29 @@ class Login extends Component {
   render() {
     const {err} = this.props.userState;
     return (
-        <div className="jumbotron text-center row">
-          <h1>Login</h1>
-          {
-            err ? <p>Invalid Username or Password</p> : ''
-          }
-          <div className="col-sm-4 col-sm-push-4">
-            <form>
-                <input placeholder="Enter UserName :" type="text" className="form-control" value={this.state.username} onChange={(event) => this.saveHandler(event, 'username')}/><br/>
-                <input placeholder="Enter Password : " type="password"  className="form-control" value={this.state.password} onChange={(event) => this.saveHandler(event, 'password')}/><br/>
-                <div className="row">
-                  <div className="col-sm-5 col-sm-push-1">
-                    <input type="submit" className="btn btn-danger" value="Login" onClick={ this.loginUser }/>
-                  </div>
-                  <div className="col-sm-5">
-                    <a href="/signup" className="btn btn-danger">NewUser</a>
-                  </div>
-                </div>
-            </form>
-          </div>
+      <div className="jumbotron text-center row">
+        <h1>Login</h1>
+        {
+          err ? <p>Invalid Username or Password</p> : ''
+        }
+        <div className="col-sm-4 col-sm-push-4">
+          <form>
+            <input placeholder="Enter UserName :" type="text" className="form-control" value={this.state.username}
+                   onChange={(event) => this.saveHandler(event, 'username')}/><br/>
+            <input placeholder="Enter Password : " type="password" className="form-control" value={this.state.password}
+                   onChange={(event) => this.saveHandler(event, 'password')}/><br/>
+            {/*<input type="hidden" name="_csrf" value="#{csrf}"/>*/}
+            <div className="row">
+              <div className="col-sm-5 col-sm-push-1">
+                <input type="submit" className="btn btn-danger" value="Login" onClick={ this.loginUser }/>
+              </div>
+              <div className="col-sm-5">
+                <a href="/signup" className="btn btn-danger">NewUser</a>
+              </div>
+            </div>
+          </form>
         </div>
+      </div>
     )
   }
 }

@@ -1,39 +1,40 @@
 import React from 'react';
-import {connect} from 'react-redux'
 import _ from 'lodash'
 export default class Filter extends React.Component {
   constructor() {
     super();
     this.state = {
       filter: '',
-      result: []
     };
   }
-
   applyFilter = () => {
-    console.log('hi', this.state.filter);
     let filterResultset = [], {todos} = this.props.todoList;
-
-    if (this.state.filter === 'Asc') {
-      let res1 = todos;
-      filterResultset = _.sortBy(todos, n =>  n.name);
-    } else if (this.state.filter === 'Desc') {
-      filterResultset = _.sortBy(todos, n =>  n.name);
-      filterResultset = filterResultset.reverse();
-    } else if (this.state.filter === 'DateAsc') {
-      filterResultset = todos.sort((a, b) => {
-        a = new Date(a.updatedAt);
-        b = new Date(b.updatedAt);
-        return a - b;
-      });
-    } else {
-      filterResultset = todos.sort(function (a, b) {
-        a = new Date(a.updatedAt);
-        b = new Date(b.updatedAt);
-        return b - a;
-      });
+    switch (this.state.filter){
+      case 'Asc':   filterResultset = _.sortBy(todos, n =>  n.name);
+      break;
+      case 'Desc':{
+        filterResultset = _.sortBy(todos, n =>  n.name);
+        filterResultset = filterResultset.reverse();
+      }
+      break;
+      case 'DateAsc' :{
+        filterResultset = todos.sort((a, b) => {
+          a = new Date(a.updatedAt);
+          b = new Date(b.updatedAt);
+          return a - b;
+        });
+      }
+      break;
+      case 'DateDesc':{
+        filterResultset = todos.sort(function (a, b) {
+          a = new Date(a.updatedAt);
+          b = new Date(b.updatedAt);
+          return b - a;
+        });
+      }
+      break;
+      default: console.log('enter valid option')
     }
-    console.log(filterResultset, '>>>filter');
     this.props.filteredTodos(filterResultset)
   };
 
@@ -51,5 +52,3 @@ export default class Filter extends React.Component {
     )
   }
 }
-
-//export default connect(state=>state)(Filter);

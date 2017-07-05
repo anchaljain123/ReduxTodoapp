@@ -2,12 +2,13 @@ const commentService = require('./comment.service');
 const sendMail = require('../../configuration/sendMail');
 
 export const saveComment = (req,res,next)  => {
+  console.log(req.body,'>>>')
   if(req.body.tagEmail){
     let ob = {
       email : req.body.tagEmail,
       tagcomment : req.body.comment,
       todo:req.body.todoId,
-      User:req.body.postedBy
+      User:req.body.taggedBy
     };
     sendMail.send(ob)
   }

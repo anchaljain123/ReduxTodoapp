@@ -3,10 +3,8 @@ import Routes from '../configuration/routes'
 import passport from 'passport'
 import session from 'express-session'
 import passportAuth from '../configuration/authUser'
-//const csrf = require('csurf');
 
 exports.appStarted = (app) => {
- // app.use(csrf({}));
   app.use(session({secret: '6786476467'}), passport.initialize(), passport.session());
   passportAuth();
   app.use([Routes.userRoute,Routes.todoRoute,Routes.commentRoute]);

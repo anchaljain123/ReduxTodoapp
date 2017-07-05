@@ -14,7 +14,7 @@ const send = (mailObject) =>{
   const mailOptions = {
     from: '"Anchal" <anchal.jain@tothenew.com>', // sender address
     to: mailObject.email, // list of receivers
-    subject: 'Welcome mail', // Subject line
+    subject: 'Notification mail', // Subject line
     text: 'Hello Newer', // plain text body
     html: `<p> Your Friend ${mailObject.User.username} has tagged you in a Comment </p>`
     +mailObject.todo+":"+mailObject.tagcomment + " Open here : " +

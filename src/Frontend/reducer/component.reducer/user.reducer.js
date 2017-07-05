@@ -10,6 +10,7 @@ import {
 
 const initialState = {
   user: {},
+  token:'',
   loading: false,
   err: '',
   status:''
@@ -29,7 +30,6 @@ export const userReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         status:'success'
-
       }
     }
 

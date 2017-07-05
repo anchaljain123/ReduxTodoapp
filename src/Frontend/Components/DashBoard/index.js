@@ -1,13 +1,11 @@
 import React from 'react'
-import { addLocaleData, FormattedMessage } from 'react-intl'
 import {connect} from  'react-redux'
 import Logout from '../Logout'
 import {Route, Redirect, Switch} from 'react-router-dom'
 import Todo from '../Todo'
 import Feeds from '../Feeds'
 import Navbar from '../Navbar'
-import PropTypes from 'prop-types'
-import isAuth from '../isAuthenticated'
+import {ToastContainer, ToastMessage} from 'react-toastr'
 import {
   asyncgetUser,
   asyncgetTodos
@@ -15,22 +13,31 @@ import {
 
 class DashBoard extends React.Component {
   componentWillMount() {
-    console.log('component mounted dashboard');
     this.props.getUser();
+   // this.addAlert()
+    // InInDerStore.addChangeListener(this.addAlert);
   }
+
+  addAlert = () => {
+    this.refs.container.success(
+      "Welcome ", {
+        timeOut: 30000,
+        extendedTimeOut: 10000
+      });
+  };
 
   render() {
     const {user} = this.props.userState;
     const {todos} = this.props;
-    const Bannerstyle = {
-      marginTop: "75px",
-    };
+    let ToastMessageFactory = React.createFactory(ToastMessage.animation);
     return (
       <div>
-        <div className="text-center row" style={Bannerstyle}>
-          {/*<FormattedMessage id="Hello" defaultMessage={`Hello {user.username}`} />*/}
+        <ToastContainer ref="container"
+                        toastMessageFactory={ToastMessageFactory}
+                        className="toast-top-right"/>
+        <div className="jumbotron text-center row">
           <h4>HELLO {user.username}</h4>
-            <Logout/>
+          <Logout/>
         </div>
         <div className="container-fluid">
 
@@ -38,7 +45,7 @@ class DashBoard extends React.Component {
           <div>
             <Switch>
               <Route exact path="/dashboard/todos"
-                     render={props => <Todo {...props} user={user} dispatch={this.props.dispatch} todos={todos} />}
+                     render={props => <Todo {...props} user={user} dispatch={this.props.dispatch} todos={todos}/>}
               />
               <Route path="/dashboard/feeds" render={props =>
                 <Feeds {...props} user={user} dispatch={this.props.dispatch}/>}
