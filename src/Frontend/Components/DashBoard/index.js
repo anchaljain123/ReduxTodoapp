@@ -14,7 +14,6 @@ import {
 class DashBoard extends React.Component {
 
   addAlert = () => {
-    const {user} = this.props.userState;
      this.refs.container.success(" Welcome User");
      setTimeout(()=>{
        this.refs.container.clear()
@@ -25,6 +24,8 @@ class DashBoard extends React.Component {
     this.props.getUser();
   }
   componentDidMount(){
+  //   const {user} = this.props.userReducer;
+  //   console.log(this.props,'.user>>>>>>>>..')
    this.addAlert()
   }
   render() {
