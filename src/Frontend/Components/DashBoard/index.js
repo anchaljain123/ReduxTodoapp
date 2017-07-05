@@ -33,18 +33,23 @@ class DashBoard extends React.Component {
     const {todos} = this.props;
     let ToastMessageFactory = React.createFactory(ToastMessage.animation);
     return (
-      <div>
-        <ToastContainer ref="container"
-                        toastMessageFactory={ToastMessageFactory}
-                        className="toast-top-right"/>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-sm-6">
+            <ToastContainer ref="container"
+                            toastMessageFactory={ToastMessageFactory}
+                            className="toast-top-right"/>
+            <h3> HELLO {user.username}</h3>
+          </div>
+          <div className="col-sm-6">
+            <p className=" pull-right"> <Logout/></p>
+          </div>
 
-        <div className="jumbotron text-center row">
-          <h4>HELLO {user.username}</h4>
-          <Logout/>
         </div>
         <div className="container-fluid">
 
           <Navbar/>
+          <br/>
           <div>
             <Switch>
               <Route exact path="/dashboard/todos"
