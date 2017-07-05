@@ -2,11 +2,13 @@ import React, {Component} from 'react'
 import CommentForm from './CommentForm'
 import {connect} from 'react-redux'
 import ShowComments from './ShowComments'
+import loader from '../../../assets/img/loader.gif'
 import {
   asyncsaveComment, asyncgetComments
 }from '../../../action'
 
 class Comment extends Component {
+
   componentWillMount() {
     this.props.dispatch(asyncgetComments())
   }
@@ -26,6 +28,11 @@ class Comment extends Component {
       <td>
         <CommentForm saveComment={this.saveComment}/>
         <ShowComments todo={this.props.todo} comments={comments}/>
+        {
+          this.props.commentReducer.loading?
+             <img src={loader}/>
+            :""
+        }
       </td>
 
     )

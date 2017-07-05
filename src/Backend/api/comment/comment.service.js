@@ -6,7 +6,10 @@ const newComment = new Comment(todoDetails);
     if (err)
       res.send({error: err});
     else {
-      res.send(data);
+      setTimeout(()=>{
+        res.send(data);
+      },2000);
+
     }
   })
 };
