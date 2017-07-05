@@ -12,20 +12,21 @@ import {
 } from '../../action'
 
 class DashBoard extends React.Component {
-  componentWillMount() {
-    this.props.getUser();
-   // this.addAlert()
-    // InInDerStore.addChangeListener(this.addAlert);
-  }
 
   addAlert = () => {
-    this.refs.container.success(
-      "Welcome ", {
-        timeOut: 30000,
-        extendedTimeOut: 10000
-      });
+    const {user} = this.props.userState;
+     this.refs.container.success(" Welcome User");
+     setTimeout(()=>{
+       this.refs.container.clear()
+     },2000)
   };
 
+  componentWillMount() {
+    this.props.getUser();
+  }
+  componentDidMount(){
+   this.addAlert()
+  }
   render() {
     const {user} = this.props.userState;
     const {todos} = this.props;
@@ -35,6 +36,7 @@ class DashBoard extends React.Component {
         <ToastContainer ref="container"
                         toastMessageFactory={ToastMessageFactory}
                         className="toast-top-right"/>
+
         <div className="jumbotron text-center row">
           <h4>HELLO {user.username}</h4>
           <Logout/>
