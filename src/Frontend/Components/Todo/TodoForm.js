@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 
+
 export default class TodoForm extends Component{
 
   constructor(){
@@ -19,19 +20,17 @@ export default class TodoForm extends Component{
   saveTodo = () => {
   let {_id} = this.props.userDetails;
   let { name } = this.state;
-  let ob = {
+    let ob = {
     name,
     status:'Pending',
     userID:_id
   };
-
     this.props.savetodo(ob);
     this.setState ({
       name:'',
       status:''
-    })
+    });
   };
-
   render(){
     return(
       <div className="row">

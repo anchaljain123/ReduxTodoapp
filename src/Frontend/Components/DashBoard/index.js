@@ -1,4 +1,5 @@
 import React from 'react'
+import { addLocaleData, FormattedMessage } from 'react-intl'
 import {connect} from  'react-redux'
 import Logout from '../Logout'
 import {Route, Redirect, Switch} from 'react-router-dom'
@@ -21,6 +22,9 @@ class DashBoard extends React.Component {
   render() {
     const {user} = this.props.userState;
     const {todos} = this.props;
+    const Bannerstyle = {
+      marginTop: "75px",
+    };
     return (
       <div className="container-fluid">
         <div className="row">

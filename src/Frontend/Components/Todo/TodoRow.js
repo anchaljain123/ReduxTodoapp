@@ -30,7 +30,6 @@ class TodoRow extends Component {
 
     }
     return (
-
       <div className="row" id={todo._id}>
         <br/>
         <div className="col-sm-12"><p style={{wordWrap: "break-word"}}>{todo._id} - {todo.name}</p></div>

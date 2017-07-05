@@ -13,7 +13,8 @@ import {
   SEARCH_TODOS_SUCCESS,
   SEARCH_TODOS_FAILED,
   CHANGE_STATUS_SUCCESS,
-  CHANGE_STATUS_FAILED
+  CHANGE_STATUS_FAILED,
+  UPDATE_TODOS
 }from '../../constant'
 
 const initialState = {
@@ -161,6 +162,13 @@ export const todoReducer = (state=initialState,action) => {
       }
     }
 
+    case UPDATE_TODOS :{
+      console.log(action.data,'>>>>>filter')
+      return{
+        ...state,
+        todos:action.data
+      }
+    }
     default:
       return state;
   }

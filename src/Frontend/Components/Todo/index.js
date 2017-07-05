@@ -1,46 +1,37 @@
 import React, {Component} from 'react'
+import EventEmitter from 'events';
 import {connect} from 'react-redux'
 import TodoForm from './TodoForm'
+import Filter from './Filter'
 import TodoList from './TodoList'
 import {
   asyncsaveTodo,
   asyncgetTodos,
   asyncgetUser,
-  asyncsearchTodos
+  asyncsearchTodos,
+  updateStore
 }from '../../action'
 
 class Todo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-     searchVal : ''
+      searchVal: '',
     }
   }
 
   componentWillMount() {
-    console.log("***********Todo componentwillmount********", this.props);
     this.props.dispatch(asyncgetUser())
       .then(data => {
-        console.log(data, 'then');
         this.props.dispatch(asyncgetTodos(data._id))
       })
-      .then(data => {
-        console.log(data, '>>>todocomponentwillmount>>>>>>>>>');
-        this.setState({todoArry: data})
-      })
   }
-  /*componentWillReceiveProps(newprops) {
-   console.log('**********todocomponent will rec props********', newprops);
-   if(newprops.user._id && !newprops.todos.length){
-   this.props.dispatch(asyncgetTodos(newprops.user._id))
-   .then(data => {
-   console.log(data, '>>>todocomponentwillrecprops');
-   this.setState ({
-   todoArry:data
-   })
-   })
-   }
-   }*/
+
+  filteredTodos = (todosState) => {
+    console.log(todosState);
+    this.props.dispatch(updateStore(todosState));
+  };
+
   savetodoDetails = (todoState) => {
     this.props.dispatch(asyncsaveTodo(todoState))
   };
@@ -49,22 +40,24 @@ class Todo extends Component {
     console.log(this.props.user._id);
     this.setState({
       searchVal: event.target.value
-    },()=>{
-        this.props.dispatch(asyncsearchTodos(this.state.searchVal,this.props.user._id))
+    }, () => {
+      this.props.dispatch(asyncsearchTodos(this.state.searchVal, this.props.user._id))
     })
   };
 
   render() {
-    console.log(this.props.todos, ">>>todoprops");
+
     return (
       <div>
         <TodoForm savetodo={this.savetodoDetails} userDetails={this.props.user}/>
-          <input style={{width:"40%"}} type="text" placeholder="Search.." className="form-control" value={this.state.searchVal} onChange={this.handleChange}/>
+        <input style={{width: "40%"}} type="text" placeholder="Search.." className="form-control"
+               value={this.state.searchVal} onChange={this.handleChange}/>
+        <Filter todoList = {this.props.todoReducer} filteredTodos={this.filteredTodos}/>
         <br/>
-        <TodoList userDetails={this.props.user} dispatch={this.props.dispatch}/>
+        <TodoList userDetails={this.props.user} dispatch={this.props.dispatch} />
       </div>
     )
   }
 }
 
-export default Todo;
+export default connect(state => state)(Todo);
