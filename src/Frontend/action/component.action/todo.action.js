@@ -13,7 +13,7 @@ import {
   SEARCH_TODOS_FAILED,
   CHANGE_STATUS_SUCCESS,
   CHANGE_STATUS_FAILED,
-
+  UPDATE_TODOS
 }from '../../constant'
 
 export const asyncsaveTodoSuccess = (data) => {
@@ -99,5 +99,11 @@ export const asyncchangeTodoStatusSuccess = (data) =>{
 export const asyncchangeTodoStatusFailed = (err) => {
   return{
     type:CHANGE_STATUS_FAILED,err
+  }
+};
+
+export const updateTodo = (data) =>{
+  return{
+    type:UPDATE_TODOS,data
   }
 };

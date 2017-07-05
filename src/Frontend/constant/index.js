@@ -25,4 +25,5 @@ exports.DELETE_COMMENT_SUCCESS = "DELETE_COMMENT_SUCCESS";
 exports.DELETE_COMMENT_FAILED = "DELETE_COMMENT_FAILED";
 exports.CHANGE_STATUS_SUCCESS = "CHANGE_STATUS_SUCCESS";
 exports.CHANGE_STATUS_FAILED = "CHANGE_STATUS_FAILED";
+exports.UPDATE_TODOS = "UPDATE_TODOS";
 exports.emailRegex =/^[-a-z0-9~!$%^&*_=+}{'?]+(\.[-a-z0-9~!$%^&*_=+}{'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;

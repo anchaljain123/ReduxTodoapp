@@ -25,7 +25,7 @@ export default class CommentRow extends Component{
         {this.props.item.tagEmail} -
       </span>
         <p style={{display:'inline-block',color:'black'}}>
-          {this.props.item.comment} - {diffDate}
+          {this.props.item.comment}  ({diffDate})
       </p>
 
         {

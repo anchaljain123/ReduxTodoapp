@@ -7,7 +7,7 @@ export const saveComment = (req,res,next)  => {
       email : req.body.tagEmail,
       tagcomment : req.body.comment,
       todo:req.body.todoId,
-      User:req.body.taggedBy
+      User:req.body.postedBy
     };
     sendMail.send(ob)
   }

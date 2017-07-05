@@ -13,7 +13,7 @@ const CommentSchema = new mongoose.Schema({
     required: true,
   },
   tagEmail:String,
-  taggedBy:String,
+
 },{
   timestamps:true
 });

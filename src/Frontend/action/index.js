@@ -3,7 +3,14 @@ export {
 } from './component.asyncAction/user.asyncAction'
 
 export {
-  asyncsaveTodo,asyncgetTodos,asyncUpdateTodo,asyncDeleteTodo,asyncgetAllTodos,asyncsearchTodos,asyncchangeTodoStatus
+  asyncsaveTodo,
+  asyncgetTodos,
+  asyncUpdateTodo,
+  asyncDeleteTodo,
+  asyncgetAllTodos,
+  asyncsearchTodos,
+  asyncchangeTodoStatus,
+  updateStore
 } from './component.asyncAction/todo.asyncAction'
 
 export {

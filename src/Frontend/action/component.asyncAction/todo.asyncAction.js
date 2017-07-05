@@ -13,8 +13,8 @@ import {
   asyncsearchTodosSuccess,
   asyncsearchTodosFailed,
   asyncchangeTodoStatusSuccess,
-  asyncchangeTodoStatusFailed
-
+  asyncchangeTodoStatusFailed,
+  updateTodo
 } from  '../component.action/todo.action'
 import {
   asyncLoaderStarted
@@ -129,5 +129,11 @@ export const asyncchangeTodoStatus = (todoData) => {
       .then(res => res.json())
       .then(data => dispatch(asyncchangeTodoStatusSuccess(data)))
       .catch(err => dispatch(asyncchangeTodoStatusFailed(err)))
+  }
+};
+
+export const updateStore = (todoData) =>{
+  return function (dispatch) {
+    dispatch(updateTodo(todoData))
   }
 };
