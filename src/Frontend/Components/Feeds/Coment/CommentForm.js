@@ -1,17 +1,27 @@
 import React from 'react'
 import TagInput from './TagsInput'
-import 'react-tagsinput/react-tagsinput.css'
-import '../../../assets/css/reacttagCss.css'
+import ShowTags from './ShowTags'
+import {
+  emailRegex
+} from '../../../constant'
 export default class CommentForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       comment: '',
-      tags: ''
+      tags: []
     }
   }
 
   addTags = (tagVal) => {
+
+    let tempArry = tagVal.slice();
+    tempArry.filter((item,idx) => {
+      if(!emailRegex.test(item)){
+        tagVal.splice(idx,1);
+      }
+    });
+
     this.setState({
       tags: tagVal
     }, () => {
@@ -30,11 +40,22 @@ export default class CommentForm extends React.Component {
   render() {
     return (
       <div className="input-group">
-        <TagInput addTags={this.addTags}/> <span style={{display:'inline-block'}}>(press Enter)</span>
+        <div className="row">
+          <div className="col-md-6" >
+            {
+              this.state.tags.length ? <ShowTags Tags={this.state.tags}/> : ''
+            }
+            <div className="col-md-6">
+              <TagInput addTags={this.addTags}/>
+              <span>(press Enter)</span>
+            </div>
+          </div>
+        </div>
         <input type="text" className="form-control" value={this.state.comment} placeholder="write comment"
                onChange={(event) => this.setState({comment: event.target.value})} ref="addcmnt"/>
         <div className="input-group-btn">
-          <input type="submit" className="btn btn-success" onClick={this.addComment} value="Add Comment"/>
+          <input type="submit" className="btn btn-success" style={{marginTop: '40px'}} onClick={this.addComment}
+                 value="Add Comment"/>
         </div>
       </div>
     )

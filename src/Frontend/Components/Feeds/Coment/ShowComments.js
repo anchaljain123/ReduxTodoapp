@@ -13,7 +13,7 @@ class ShowComments extends Component {
     let {user} = this.props.userReducer;
     //let commentsArray = this.props.commentReducer.comments;
     return (
-      <div>
+      <div className="" style={{borderStyle:'inset',borderColor:'#fcf8e3'}}>
         {
           this.props.comments.map((item) => {
             if (item.todoId === this.props.todo._id) {

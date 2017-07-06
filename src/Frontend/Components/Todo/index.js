@@ -50,9 +50,12 @@ class Todo extends Component {
     return (
       <div>
         <TodoForm savetodo={this.savetodoDetails} userDetails={this.props.user}/>
-        <input style={{width: "40%"}} type="text" placeholder="Search.." className="form-control"
-               value={this.state.searchVal} onChange={this.handleChange}/>
+        <hr/>
+        <input style={{width: "20%",display:'inline-block',float:'right',marginLeft:'5px'}} type="text"
+               placeholder="Search.." className="form-control"
+               value={this.state.searchVal} onChange={this.handleChange}/> &nbsp;&nbsp;
         <Filter todoList = {this.props.todoReducer} filteredTodos={this.filteredTodos}/>
+        <hr/>
         <br/>
         <TodoList userDetails={this.props.user} dispatch={this.props.dispatch} />
       </div>

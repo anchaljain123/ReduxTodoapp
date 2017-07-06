@@ -26,7 +26,7 @@ class DashBoard extends React.Component {
   componentDidMount(){
   //   const {user} = this.props.userReducer;
   //   console.log(this.props,'.user>>>>>>>>..')
-   this.addAlert()
+   this.addAlert();
   }
   render() {
     const {user} = this.props.userState;
@@ -44,10 +44,8 @@ class DashBoard extends React.Component {
           <div className="col-sm-6">
             <p className=" pull-right"> <Logout/></p>
           </div>
-
         </div>
         <div className="container-fluid">
-
           <Navbar/>
           <br/>
           <div>

@@ -1,46 +1,31 @@
 import React from 'react'
-import {
-  emailRegex
-} from '../../../constant'
-export default class CommentForm extends React.Component {
+
+export default class TagsInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       tag: " ",
-      arry: []
+      tagArray:[]
     }
   }
 
   handleChange = (event) => {
     this.setState({
-      tag: event.target.value
+      tag: event.target.value.trim(),
     })
   };
 
   handleKeyPress = (event) => {
-    let emailArray = [];
-    if (event.key === 'Enter') {
-      let nstring = "",flag = 0;
-      nstring = this.state.tag;
-      nstring = nstring.split(" ");
-      nstring.filter((item, i) => {
-        if (item === '') {
-          nstring.splice(i, 1)
-        }
-      });
-      nstring.forEach(item => {
-        if (emailRegex.test(item)) {
-          emailArray.push(item);
-        }
-      });
+    if (event.key === 'Enter'){
+      const tempArr = [];
+      const tag =   this.state.tag;
+      tempArr.push(tag, ...this.state.tagArray);
       this.setState({
-        tag:nstring,
-        arry:emailArray
+        tagArray: tempArr
       },()=>{
-        this.props.addTags(this.state.arry);
+        this.props.addTags(this.state.tagArray);
         this.setState({
-          tag: '',
-          arry : []
+          tag: ""
         })
       });
     }
@@ -51,6 +36,7 @@ export default class CommentForm extends React.Component {
         <input
           type="text"
           className="form-control"
+          ref="taginput"
           value={this.state.tag}
           placeholder="Add Tags"
           onChange={this.handleChange}

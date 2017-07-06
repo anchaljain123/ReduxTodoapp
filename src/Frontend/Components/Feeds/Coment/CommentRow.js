@@ -30,7 +30,7 @@ export default class CommentRow extends Component{
 
         {
           this.props.user._id === this.props.item.postedBy._id?
-            <button onClick={this.deleteComment}>Delete</button>
+            <button onClick={this.deleteComment} className="btn btn-danger" style={{float:'right'}}>Delete</button>
             :''
         }
         </div>

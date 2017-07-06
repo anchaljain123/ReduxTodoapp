@@ -33,10 +33,11 @@ export default class TodoForm extends Component{
   };
   render(){
     return(
-      <div className="row">
-        <div className="col-sm-12">
+      <div className="row" style={{display:'inline-block'}}>
+        <div className="col-sm-6">
           <div className="input-group">
-            <input type="text" className="form-control" value={this.state.name} onChange={(e)=>this.changeHandler(e,'name')}/>
+            <input type="text" className="form-control input-group-sm" value={this.state.name}
+                   onChange={(e)=>this.changeHandler(e,'name')}/>
             <div className="input-group-btn">
               <button className="btn btn-danger" type="submit" onClick={this.saveTodo}>AddTodo</button>
             </div>
