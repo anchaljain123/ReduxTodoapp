@@ -6,6 +6,6 @@ exports.validatePassword = (req, res, next) => {
   if (result.error === null) {
     next();
   } else {
-    next(new Error('Invalid Username or Password'))
+    next(new Error('Invalid Username or Password (both fields must contain capital letter & small letters only min len-4)'))
   }
 };

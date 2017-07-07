@@ -35,7 +35,7 @@ class Signup extends Component {
     const {err,status} = this.props.userReducer;
     return (
       <div className="jumbotron text-center row">
-        <h1>Signup Form </h1>
+        <h1> Signup Form </h1>
         {
           err ? <p>{err.msg}</p> : ''
         }
