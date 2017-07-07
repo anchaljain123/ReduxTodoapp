@@ -1,25 +1,25 @@
 import React, {Component} from 'react'
+import {
+  getImages
+}from'../../action'
 
-export default class UploadImage extends Component {
-  constructor(){
+class UploadImage extends Component {
+  constructor() {
     super();
     this.state = {
       progress: -1,
       hasError: false,
     };
   }
+
   onImageUploaderChange = (event) => {
-   // event.preventDefault();
     let file = event.target.files[0];
-    console.log(file);
-
-    let formData = new FormData();
-    formData.append('img',file);
-
     const req = new XMLHttpRequest();
 
+    let formData = new FormData();
+    formData.append('img', file);
+
     req.addEventListener('progress', (e) => {
-      console.log(e,'>>>>e');
       let progress = 0;
       if (e.total !== 0) {
         progress = parseInt((e.loaded / e.total) * 100, 10);
@@ -27,23 +27,33 @@ export default class UploadImage extends Component {
       this.setState({
         progress,
       });
+
+      if(progress === 100){
+        console.log(100);
+      }
+
     });
 
-    req.addEventListener('load',(e)=>{
+    req.addEventListener('load', (e) => {
       console.log(e, "loaded");
+      this.props.loadGallery()
     });
 
-    req.addEventListener('error',(e)=>{
+    req.addEventListener('error', (e) => {
       console.log(e);
       this.setState({
         hasErrors: true
       })
     });
 
-    req.open('POST','/saveImg');
+    req.addEventListener('onloadend', () => {
+      this.setState({
+        progress: -1,
+        hasError: false,
+      })
+    });
+    req.open('POST', '/saveImg');
     req.send(formData);
-
-
 
   };
 
@@ -62,3 +72,5 @@ export default class UploadImage extends Component {
     )
   }
 }
+
+export default UploadImage

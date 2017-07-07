@@ -16,3 +16,7 @@ export {
 export {
   asyncsaveComment,asyncgetComments,asyncdeleteComment
 }from './component.asyncAction/comment.asyncAction'
+
+export {
+  getImages
+}from './component.asyncAction/gallery.asyncAction'

@@ -27,8 +27,11 @@ app.use('/*', (req,res) => {
     res.sendFile(path.resolve(__dirname, '../../index.html'))
 });
 
-/* Starting the server */
 
+
+
+
+/* Starting the server */
 app.listen(PORT, console.log("Running on port >>>>>>>>>>>>>>>" + PORT));
 
 //var PORT = process.env.npm_package_config_port;
