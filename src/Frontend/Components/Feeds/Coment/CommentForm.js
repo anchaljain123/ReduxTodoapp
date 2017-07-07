@@ -51,7 +51,7 @@ export default class CommentForm extends React.Component {
             </div>
           </div>
         </div>
-        <input type="text" className="form-control" value={this.state.comment} placeholder="write comment"
+        <textarea className="form-control" value={this.state.comment} placeholder="write comment"
                onChange={(event) => this.setState({comment: event.target.value})} ref="addcmnt"/>
         <div className="input-group-btn">
           <input type="submit" className="btn btn-success" style={{marginTop: '40px'}} onClick={this.addComment}
