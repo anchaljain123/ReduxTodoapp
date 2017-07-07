@@ -7,7 +7,7 @@ import passportAuth from '../configuration/authUser'
 exports.appStarted = (app) => {
   app.use(session({secret: '6786476467'}), passport.initialize(), passport.session());
   passportAuth();
-  app.use([Routes.userRoute,Routes.todoRoute,Routes.commentRoute]);
+  app.use([Routes.userRoute,Routes.todoRoute,Routes.commentRoute,Routes.galleryRoute]);
 
 
   //error-handling Middleware

@@ -5,6 +5,7 @@ import {Route, Redirect, Switch} from 'react-router-dom'
 import Todo from '../Todo'
 import Feeds from '../Feeds'
 import Navbar from '../Navbar'
+import Gallery from '../Gallery'
 import {ToastContainer, ToastMessage} from 'react-toastr'
 import {
   asyncgetUser,
@@ -56,6 +57,7 @@ class DashBoard extends React.Component {
               <Route path="/dashboard/feeds" render={props =>
                 <Feeds {...props} user={user} dispatch={this.props.dispatch}/>}
               />
+              <Route path="/dashboard/gallery" component={Gallery}/>
               <Redirect from='/dashboard' to="/dashboard/todos"/>
             </Switch>
           </div>

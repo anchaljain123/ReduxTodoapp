@@ -17,6 +17,11 @@ class Navbar extends Component {
               Todos &nbsp;<i className="fa fa-list-alt" aria-hidden="true"></i>
             </Link>
           </li>
+          <li>
+            <Link to="/dashboard/gallery">
+              Gallery &nbsp;<i className="	glyphicon glyphicon-th" aria-hidden="true"></i>
+            </Link>
+          </li>
         </ul>
       </div>
     )

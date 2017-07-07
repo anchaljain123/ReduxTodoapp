@@ -6,12 +6,8 @@ import {
 }from '../../../action'
 
 class ShowComments extends Component {
-/*componentWillReceiveProps(newProps){
-  console.log(newProps,'>>>compwillrevcprops')
-}*/
   render() {
     let {user} = this.props.userReducer;
-    //let commentsArray = this.props.commentReducer.comments;
     return (
       <div className="" style={{borderStyle:'inset',borderColor:'#fcf8e3'}}>
         {
