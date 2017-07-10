@@ -52,6 +52,7 @@
     "redux-promise-middleware": "^4.3.0",
     "redux-thunk": "^2.2.0",
     "sendmail": "^1.1.1",
+    "socket.io": "^2.0.3",
     "webpack": "^2.6.1",
     "webpack-dev-middleware": "^1.10.2"
   },
