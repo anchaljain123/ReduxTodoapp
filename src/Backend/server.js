@@ -9,7 +9,7 @@ const webpackFile = require('../../webpack.config');
 const constantFile = require('./constants');
 const configFile = require('./configuration/app');
 const app = express();
-const PORT = constantFile.PORT;
+const PORT = process.env.PORT || constantFile.PORT;
 const compiler = webpack(webpackFile);
 
 
