@@ -17,8 +17,7 @@ const send = (mailObject) =>{
     subject: 'Notification mail', // Subject line
     text: 'Hello Newer', // plain text body
     html: `<p> Your Friend ${mailObject.User.username} has tagged you in a Comment </p>`
-    +mailObject.todo+":"+mailObject.tagcomment + " Open here : " +
-    'http://localhost:4000/dashboard/feeds'
+    +mailObject.todo+":"+mailObject.tagcomment
   };
 
   // send mail with defined transport object
