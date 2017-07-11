@@ -1,8 +1,8 @@
 require('../configuration/connection');
-import Routes from '../configuration/routes'
-import passport from 'passport'
-import session from 'express-session'
-import passportAuth from '../configuration/authUser'
+const Routes = require('../configuration/routes');
+const passport = require('passport');
+const session = require('express-session');
+const passportAuth = require('../configuration/authUser')
 
 exports.appStarted = (app) => {
   app.use(session({secret: '6786476467'}), passport.initialize(), passport.session());

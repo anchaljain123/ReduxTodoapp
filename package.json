@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "babel": "babel --presets es2015 ./src/Backend/server.js -o /Mybundle.js",
-    "start": "babel-node ./src/Backend/server.js",
+    "start": "node ./src/Backend/server.js",
     "b": "babel-node",
     "lint": "node-lint ./src/Backend/server.js"
   },

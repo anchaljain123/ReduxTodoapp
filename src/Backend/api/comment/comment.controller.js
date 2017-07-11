@@ -1,8 +1,7 @@
 const commentService = require('./comment.service');
 const sendMail = require('../../configuration/sendMail');
 
-export const saveComment = (req,res,next)  => {
-  console.log(req.body,'>>>')
+exports.saveComment = (req,res,next)  => {
   if(req.body.tagEmail){
     let ob = {
       email : req.body.tagEmail,
@@ -15,10 +14,10 @@ export const saveComment = (req,res,next)  => {
   commentService.saveComment(req.body,res);
 };
 
-export const getComments = (req,res,next) =>{
+exports.getComments = (req,res,next) =>{
   commentService.getComments(res)
 };
 
-export const deleteComment = (req,res,next) => {
+exports.deleteComment = (req,res,next) => {
   commentService.deleteComment(req.body,res)
 };
