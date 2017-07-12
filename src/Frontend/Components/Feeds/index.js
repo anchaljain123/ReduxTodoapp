@@ -11,7 +11,13 @@ class Feeds extends React.Component {
   render() {
     console.log(this.props.todoReducer.todos, ">>>feeds");
     const {todos} = this.props.todoReducer;
-    const feeds = todos.map(item =>
+    let newTodos = [];
+    todos.filter(item =>{
+      if(item.userID._id === this.props.user._id){
+        newTodos.push(item)
+      }
+    });
+    const feeds = newTodos.map(item =>
         <FeedRow key={item._id} todo={item} user={this.props.user} dispatch={this.props.dispatch}/>
     );
     return (
